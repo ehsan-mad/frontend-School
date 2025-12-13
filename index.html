@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thornhill High School | Excellence Through Knowledge</title>
+    <title>Panama School | Excellence Through Knowledge</title>
 
     <!-- Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,6 +68,14 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Parallax effect */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
 
@@ -77,19 +85,29 @@
     <nav
         class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-stone-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex items-center h-20">
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center mr-4">
+                    <button class="text-stone-600 hover:text-stone-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width-2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <div
                         class="w-10 h-10 bg-brand-900 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">
                         A
                     </div>
-                    <span class="font-bold text-xl tracking-tight text-stone-900">Thornhill<span
-                            class="text-amber-600">High School</span></span>
+                    <span class="font-bold text-xl tracking-tight text-stone-900">Panama<span
+                            class="text-amber-600">School</span></span>
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8 ml-auto">
                     <a href="#" class="text-stone-600 hover:text-brand-900 font-medium transition-colors">Home</a>
                     <a href="#about" class="text-stone-600 hover:text-brand-900 font-medium transition-colors">About</a>
                     <a href="#academics"
@@ -100,16 +118,6 @@
                         class="px-5 py-2.5 bg-brand-900 text-white font-medium rounded-lg hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-900/20 transform hover:-translate-y-0.5">
                         Apply Now
                     </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-stone-600 hover:text-stone-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
@@ -137,7 +145,7 @@
                         Minds.</span>
                 </h1>
                 <p class="text-lg sm:text-xl text-stone-200 mb-10 leading-relaxed max-w-2xl font-light">
-                    Welcome to Thornhill High School, where excellence meets opportunity and we prepare students to become confident, compassionate leaders of tomorrow.
+                    Welcome to Panama School, where excellence meets opportunity and we prepare students to become confident, compassionate leaders of tomorrow.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#tours"
@@ -162,6 +170,207 @@
             <svg class="w-6 h-6 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+        <button aria-label="Close gallery" id="galleryClose" class="absolute top-6 right-6 text-white hover:text-amber-300 transition-colors">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="absolute inset-0" id="galleryOverlay"></div>
+        <div class="relative w-full max-w-5xl mx-auto">
+            <div class="relative bg-stone-900 rounded-2xl overflow-hidden shadow-2xl">
+                <img id="galleryModalImage" src="" alt="Gallery item" class="w-full h-[70vh] object-cover">
+                <div class="absolute inset-0 flex items-center justify-between px-3">
+                    <button aria-label="Previous image" id="galleryPrev" class="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button aria-label="Next image" id="galleryNext" class="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 bg-black/40 text-white px-4 py-3 text-sm flex items-center justify-between">
+                    <span id="galleryCaption" class="font-semibold">Gallery</span>
+                    <span id="galleryCounter" class="text-white/80"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schools Overview Section -->
+    <section id="schools" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <!-- Three-Up Schools Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 reveal-on-scroll">
+                <!-- Card 1 -->
+                <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-brand-900">
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/25"></div>
+                    <div class="relative space-y-6">
+                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Boys</h3>
+                        <a href="#" class="inline-flex items-center px-6 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-md">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-amber-600">
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/20"></div>
+                    <div class="relative space-y-6">
+                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Prep</h3>
+                        <a href="#" class="inline-flex items-center px-6 py-2.5 bg-white text-amber-700 text-sm font-semibold rounded-lg hover:bg-amber-50 transition-colors shadow-md">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-brand-900">
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/25"></div>
+                    <div class="relative space-y-6">
+                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Girls</h3>
+                        <a href="#" class="inline-flex items-center px-6 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-md">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Who We Are Split -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch reveal-on-scroll">
+                <div class="bg-stone-100 rounded-2xl p-8 sm:p-10 lg:p-12 shadow-sm">
+                    <h3 class="text-brand-900 text-2xl sm:text-3xl font-bold uppercase leading-snug mb-6">Who We Are</h3>
+                    <p class="text-stone-700 leading-relaxed text-base sm:text-lg mb-8">
+                        Panama School is a family of learning communities that guide students from their foundational years through college readiness. Set within a calm, nature-forward environment, we balance rigorous academics with character development and vibrant campus life.
+                    </p>
+                    <a href="#" class="inline-flex items-center px-6 py-2.5 bg-brand-900 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors shadow">
+                        Our Vision
+                    </a>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-xl min-h-[260px] lg:min-h-[360px]">
+                    <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Campus Building"
+                        class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Highlights Grid -->
+    <section class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal-on-scroll">
+                <h2 class="text-brand-900 font-bold tracking-wide uppercase text-sm mb-3">Community Highlights</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Student Wins & Team Moments</h3>
+                <p class="text-stone-600 text-lg max-w-3xl mx-auto">A snapshot of recent achievements, awards, and campus life moments from across Panama School.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Leadership Hike -->
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=">
+                    <img src="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=" alt="Leadership hike" class="w-full h-full object-cover min-h-[220px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                        <p class="text-sm font-semibold">Leadership Hike</p>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-wide text-white/80">
+                            <span class="flex items-center gap-1">❤ 287</span>
+                            <span>Outdoor Ed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silver Award -->
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/904531424/photo/two-school-girls-holding-hands-on-way-to-school.jpg?s=612x612&w=0&k=20&c=tVchzRSVqQUD6N7iKUvLZ12PSFH_F0Ha7zghseGwDd8=">
+                    <img src="https://media.istockphoto.com/id/904531424/photo/two-school-girls-holding-hands-on-way-to-school.jpg?s=612x612&w=0&k=20&c=tVchzRSVqQUD6N7iKUvLZ12PSFH_F0Ha7zghseGwDd8=" alt="Silver award" class="w-full h-full object-cover min-h-[220px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                        <p class="text-sm font-semibold">Silver Award</p>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-wide text-white/80">
+                            <span>Duke of Edinburgh</span>
+                            <span class="px-2 py-1 rounded-full bg-white/15 text-white">Silver</span>
+                        </div>
+                        <p class="text-xs text-white/85">Kelsey Pelham • Service, skills, expedition excellence</p>
+                    </div>
+                </div>
+
+                <!-- Team Zimbabwe -->
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=,https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg">
+                    <img src="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=" alt="Team Zimbabwe" class="w-full h-full object-cover min-h-[220px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                        <p class="text-sm font-semibold">Team Zimbabwe</p>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-wide text-white/80">
+                            <span>African Youth Games 2025</span>
+                            <span>Luanda</span>
+                        </div>
+                        <p class="text-xs text-white/85">Congratulations to Callum & Gugu for national selection.</p>
+                    </div>
+                </div>
+
+                <!-- Water Polo Team Photo -->
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://t3.ftcdn.net/jpg/02/77/89/92/360_F_277899237_BW70uPU1RSPIFgxRS4Ujst4Uc4KaHGSI.jpg">
+                    <img src="https://t3.ftcdn.net/jpg/02/77/89/92/360_F_277899237_BW70uPU1RSPIFgxRS4Ujst4Uc4KaHGSI.jpg" alt="Water polo team" class="w-full h-full object-cover min-h-[220px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                        <p class="text-sm font-semibold">Zimbabwe Water Polo</p>
+                        <p class="text-xs uppercase tracking-wide text-white/80">Panama representatives</p>
+                    </div>
+                </div>
+
+                <!-- Student Achievement -->
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="data:image/jpeg;base64,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" alt="Kunashe Katema" class="w-full h-full object-cover min-h-[220px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                        <p class="text-sm font-semibold">Kunashe Katema</p>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-wide text-white/80">
+                            <span>Bronze Award</span>
+                            <span>Duke of Edinburgh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campus Moment -->
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg">
+                    <img src="https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg" alt="Evening on campus" class="w-full h-full object-cover min-h-[220px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                        <p class="text-sm font-semibold">Evening on Campus</p>
+                        <p class="text-xs uppercase tracking-wide text-white/80">Boarding Life</p>
+                    </div>
+                </div>
+
+                <!-- Group Visit -->
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=">
+                    <img src="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=" alt="Industry mentors visit" class="w-full h-full object-cover min-h-[220px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                        <p class="text-sm font-semibold">Industry Mentors Visit</p>
+                        <p class="text-xs uppercase tracking-wide text-white/80">Careers & Guidance</p>
+                    </div>
+                </div>
+
+                <!-- Campus Tour -->
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=">
+                    <img src="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=" alt="Campus tour" class="w-full h-full object-cover min-h-[220px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                        <p class="text-sm font-semibold">Campus Tour</p>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-wide text-white/80">
+                            <span>Highlights</span>
+                            <span>Student Life</span>
+                            <span>03:12</span>
+                        </div>
+                        <p class="text-xs text-white/85">Labs, arts center, and sports facilities.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -196,7 +405,7 @@
     <section id="about" class="py-24 bg-stone-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-                <h2 class="text-amber-600 font-bold tracking-wide uppercase text-sm mb-3">Why Choose Thornhill</h2>
+                <h2 class="text-amber-600 font-bold tracking-wide uppercase text-sm mb-3">Why Choose Panama</h2>
                 <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Academic Excellence & Character
                     Development</h3>
                 <p class="text-stone-600 text-lg leading-relaxed">
@@ -311,16 +520,16 @@
                     <h3 class="text-4xl font-bold text-stone-900 mb-6">Welcome from the Administration</h3>
                     <div class="prose prose-lg text-stone-600 mb-8">
                         <p class="mb-4">
-                            "Welcome to Thornhill High School, where excellence meets opportunity. Our institution has been a cornerstone of academic achievement and character development in Gweru for generations."
+                            "Welcome to Panama School, where excellence meets opportunity. Our institution has been a cornerstone of academic achievement and character development in Gweru for generations."
                         </p>
                         <p>
-                            "At Thornhill, we combine rigorous academic standards with a supportive community environment, preparing students to become confident, compassionate leaders of tomorrow."
+                            "At Panama School, we combine rigorous academic standards with a supportive community environment, preparing students to become confident, compassionate leaders of tomorrow."
                         </p>
                     </div>
                     <div class="flex items-center gap-4">
                         <div class="h-px w-12 bg-brand-900"></div>
                         <div>
-                            <p class="font-bold text-stone-900 text-lg">Thornhill High School Administration</p>
+                            <p class="font-bold text-stone-900 text-lg">Panama School Administration</p>
                             <p class="text-stone-500 text-sm">Leadership Team</p>
                         </div>
                     </div>
@@ -338,77 +547,90 @@
                 <div class="h-1 w-20 bg-amber-600 mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div
-                    class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-brand-900 hover:shadow-2xl transition-shadow duration-300 relative group">
-                    <div
-                        class="absolute -top-4 left-8 w-8 h-8 bg-brand-900 flex items-center justify-center rounded-full text-white shadow-lg">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                            <path
-                                d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
-                        </svg>
-                    </div>
+            <!-- Carousel Container -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Carousel Slides -->
+                <div class="overflow-hidden rounded-2xl">
+                    <div id="testimonialCarousel" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-brand-900 relative group">
+                                <div class="absolute -top-4 left-8 w-8 h-8 bg-brand-900 flex items-center justify-center rounded-full text-white shadow-lg">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
+                                    </svg>
+                                </div>
 
-                    <p class="text-stone-700 mb-6 italic leading-relaxed">"Sending our son to Thornhill High School was the best
-                        decision we've made. The balance between academics and character growth is unmatched."</p>
+                                <p class="text-stone-700 mb-6 italic leading-relaxed">"Sending our son to Panama School was the best
+                                    decision we've made. The balance between academics and character growth is unmatched."</p>
 
-                    <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-                            alt="Parent" class="w-12 h-12 rounded-full object-cover ring-4 ring-white">
-                        <div>
-                            <p class="font-bold text-stone-900 text-sm">Priya Patel</p>
-                            <p class="text-stone-600 text-xs uppercase tracking-wide">Parent, Grade 10</p>
+                                <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                        alt="Parent" class="w-12 h-12 rounded-full object-cover ring-4 ring-white">
+                                    <div>
+                                        <p class="font-bold text-stone-900 text-sm">Priya Patel</p>
+                                        <p class="text-stone-600 text-xs uppercase tracking-wide">Parent, Grade 10</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-amber-600 relative group">
+                                <div class="absolute -top-4 left-8 w-8 h-8 bg-amber-600 flex items-center justify-center rounded-full text-white shadow-lg">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
+                                    </svg>
+                                </div>
+
+                                <p class="text-stone-700 mb-6 italic leading-relaxed">"The leadership opportunities here gave me the
+                                    confidence to apply to Ivy League universities. I owe so much to my teachers."</p>
+
+                                <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
+                                    <img src="https://images.unsplash.com/photo-1542596594-649edbc13630?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                        alt="Alumni" class="w-12 h-12 rounded-full object-cover ring-4 ring-white">
+                                    <div>
+                                        <p class="font-bold text-stone-900 text-sm">David Chen</p>
+                                        <p class="text-stone-600 text-xs uppercase tracking-wide">Alumni, Class of '20</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-brand-900 relative group">
+                                <div class="absolute -top-4 left-8 w-8 h-8 bg-brand-900 flex items-center justify-center rounded-full text-white shadow-lg">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
+                                    </svg>
+                                </div>
+
+                                <p class="text-stone-700 mb-6 italic leading-relaxed">"The sports facilities are incredible. Being
+                                    captain of the rugby team taught me more about leadership than any lecture could."</p>
+
+                                <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
+                                    <img src="https://images.unsplash.com/photo-1545696968-1a5245650b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                        alt="Student" class="w-12 h-12 rounded-full object-cover ring-4 ring-white">
+                                    <div>
+                                        <p class="font-bold text-stone-900 text-sm">Jason K.</p>
+                                        <p class="text-stone-600 text-xs uppercase tracking-wide">Student, Grade 12</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div
-                    class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-amber-600 hover:shadow-2xl transition-shadow duration-300 relative group">
-                    <div
-                        class="absolute -top-4 left-8 w-8 h-8 bg-amber-600 flex items-center justify-center rounded-full text-white shadow-lg">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                            <path
-                                d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
-                        </svg>
-                    </div>
-
-                    <p class="text-stone-700 mb-6 italic leading-relaxed">"The leadership opportunities here gave me the
-                        confidence to apply to Ivy League universities. I owe so much to my teachers."</p>
-
-                    <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
-                        <img src="https://images.unsplash.com/photo-1542596594-649edbc13630?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-                            alt="Alumni" class="w-12 h-12 rounded-full object-cover ring-4 ring-white">
-                        <div>
-                            <p class="font-bold text-stone-900 text-sm">David Chen</p>
-                            <p class="text-stone-600 text-xs uppercase tracking-wide">Alumni, Class of '20</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div
-                    class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-brand-900 hover:shadow-2xl transition-shadow duration-300 relative group">
-                    <div
-                        class="absolute -top-4 left-8 w-8 h-8 bg-brand-900 flex items-center justify-center rounded-full text-white shadow-lg">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                            <path
-                                d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
-                        </svg>
-                    </div>
-
-                    <p class="text-stone-700 mb-6 italic leading-relaxed">"The sports facilities are incredible. Being
-                        captain of the rugby team taught me more about leadership than any lecture could."</p>
-
-                    <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
-                        <img src="https://images.unsplash.com/photo-1545696968-1a5245650b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-                            alt="Student" class="w-12 h-12 rounded-full object-cover ring-4 ring-white">
-                        <div>
-                            <p class="font-bold text-stone-900 text-sm">Jason K.</p>
-                            <p class="text-stone-600 text-xs uppercase tracking-wide">Student, Grade 12</p>
-                        </div>
-                    </div>
+                <!-- Carousel Dots -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-amber-600 transition-all duration-300" data-slide="0"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-stone-600 transition-all duration-300" data-slide="1"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-stone-600 transition-all duration-300" data-slide="2"></button>
                 </div>
             </div>
         </div>
@@ -419,109 +641,109 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal-on-scroll">
                 <h2 class="text-brand-900 font-bold tracking-wide uppercase text-sm mb-3">Campus Life</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">A Day at Thornhill High School</h3>
+                <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">A Day at Panama School</h3>
                 <div class="h-1 w-20 bg-brand-900 mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Gallery Item 1 - Campus -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-brand-50 to-stone-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-brand-50 to-stone-100 border-2 border-transparent group-hover:border-brand-500">
+                    <div class="absolute inset-0 bg-brand-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Campus Icon -->
-                        <div class="w-20 h-20 bg-brand-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-800 transition-colors">
+                        <div class="w-20 h-20 bg-brand-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-700 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                         </div>
                         <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Our Campus</h4>
-                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-stone-200 transition-colors">
+                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
                             25-acre campus with modern facilities, green spaces, and state-of-the-art buildings designed for optimal learning and growth.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 2 - Classrooms -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-amber-50 to-stone-100" style="transition-delay: 100ms;">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-amber-50 to-stone-100 border-2 border-transparent group-hover:border-amber-500" style="transition-delay: 100ms;">
+                    <div class="absolute inset-0 bg-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Classroom Icon -->
-                        <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
+                        <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
                         </div>
                         <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Modern Classrooms</h4>
-                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-stone-200 transition-colors">
+                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
                             Smart classrooms with interactive displays, comfortable seating, and technology-enabled learning environments.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 3 - Science Labs -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-blue-50 to-stone-100" style="transition-delay: 200ms;">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-blue-50 to-stone-100 border-2 border-transparent group-hover:border-blue-500" style="transition-delay: 200ms;">
+                    <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Science Lab Icon -->
-                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors">
+                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                             </svg>
                         </div>
                         <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Science Labs</h4>
-                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-stone-200 transition-colors">
+                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
                             Fully equipped laboratories for Physics, Chemistry, and Biology with advanced instruments for practical experiments.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 4 - Sports Facilities -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-green-50 to-stone-100" style="transition-delay: 300ms;">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-green-50 to-stone-100 border-2 border-transparent group-hover:border-green-500" style="transition-delay: 300ms;">
+                    <div class="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Sports Icon -->
-                        <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors">
+                        <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>
                         <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Sports Facilities</h4>
-                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-stone-200 transition-colors">
+                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
                             Olympic-sized swimming pool, football field, basketball courts, tennis courts, and indoor sports complex.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 5 - Library -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-purple-50 to-stone-100" style="transition-delay: 400ms;">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-purple-50 to-stone-100 border-2 border-transparent group-hover:border-purple-500" style="transition-delay: 400ms;">
+                    <div class="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Library Icon -->
-                        <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-500 transition-colors">
+                        <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V5z" />
                             </svg>
                         </div>
                         <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Library & Resources</h4>
-                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-stone-200 transition-colors">
+                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
                             10,000+ books, digital resources, study zones, and research facilities with 24/7 access for students.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 6 - Student Activities -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-pink-50 to-stone-100" style="transition-delay: 500ms;">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-pink-50 to-stone-100 border-2 border-transparent group-hover:border-pink-500" style="transition-delay: 500ms;">
+                    <div class="absolute inset-0 bg-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Activities Icon -->
-                        <div class="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-pink-500 transition-colors">
+                        <div class="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-pink-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0l1 16h8l1-16M10 9v6m4-6v6" />
                             </svg>
                         </div>
                         <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Student Activities</h4>
-                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-stone-200 transition-colors">
+                        <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
                             25+ clubs, arts programs, music bands, drama society, and student government for holistic development.
                         </p>
                     </div>
@@ -734,7 +956,7 @@
                 <h2 class="text-brand-900 font-bold tracking-wide uppercase text-sm mb-3">Admissions</h2>
                 <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Admissions Process — Step-by-step guide for prospective families</h3>
                 <p class="text-stone-600 text-lg leading-relaxed max-w-3xl mx-auto">
-                    Follow this simple pathway to join the Thornhill High School community. Our team is here to support you at every step.
+                    Follow this simple pathway to join the Panama School community. Our team is here to support you at every step.
                 </p>
             </div>
 
@@ -1026,15 +1248,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Featured News Item (Large) -->
                 <div class="lg:col-span-2 group relative h-96 rounded-2xl overflow-hidden shadow-lg reveal-on-scroll">
-                    <div
-                        class="w-full h-full bg-stone-800 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
-                        <!-- Graduation Cap Icon -->
-                        <svg class="w-32 h-32 text-stone-700 group-hover:text-amber-500 transition-colors duration-500"
-                            fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z" />
-                        </svg>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                        alt="Graduation Ceremony"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <span
@@ -1053,16 +1269,9 @@
                     <!-- Item 1 -->
                     <div class="flex gap-4 group reveal-on-scroll" style="transition-delay: 100ms;">
                         <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-                            <div
-                                class="w-full h-full bg-stone-100 flex items-center justify-center group-hover:bg-brand-50 transition-colors duration-500">
-                                <!-- Trophy Icon -->
-                                <svg class="w-10 h-10 text-stone-400 group-hover:text-brand-900 transition-colors duration-500"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M9.6 20L9.6 18L14.4 18L14.4 20L9.6 20ZM5 5L19 5L19 13C19 14.7 18.5 16.2 17.5 17.4C16.6 18.5 15.3 19.3 13.7 19.6C16.1 19 18 17 19.4 14.3C20.6 11.6 21.2 8.4 21.2 5L21.2 3L2.8 3L2.8 5C2.8 8.4 3.4 11.6 4.6 14.3C6 17 7.9 19 10.3 19.6C8.7 19.3 7.4 18.5 6.5 17.4C5.5 16.2 5 14.7 5 13L5 5Z" />
-                                    <rect x="8" y="7" width="8" height="2" />
-                                </svg>
-                            </div>
+                            <img src="https://images.unsplash.com/photo-1596997000103-e597b3ca50df?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="School Playground"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
                         <div>
                             <span class="text-brand-900 text-xs font-bold uppercase">Sports</span>
@@ -1075,15 +1284,9 @@
                     <!-- Item 2 -->
                     <div class="flex gap-4 group reveal-on-scroll" style="transition-delay: 200ms;">
                         <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-                            <div
-                                class="w-full h-full bg-stone-100 flex items-center justify-center group-hover:bg-brand-50 transition-colors duration-500">
-                                <!-- Flask Icon -->
-                                <svg class="w-10 h-10 text-stone-400 group-hover:text-brand-900 transition-colors duration-500"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M7,2V4H8V18A4,4 0 0,0 12,22A4,4 0 0,0 16,18V4H17V2H7M11,16C10.4,16 10,15.6 10,15A1,1 0 0,1 11,14C11.6,14 12,14.4 12,15A1,1 0 0,1 11,16M13,12C12.4,12 12,11.6 12,11A1,1 0 0,1 13,10C13.6,10 14,10.4 14,11A1,1 0 0,1 13,12M14,7H10V4H14V7Z" />
-                                </svg>
-                            </div>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                alt="Science Laboratory"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
                         <div>
                             <span class="text-brand-900 text-xs font-bold uppercase">Science</span>
@@ -1095,12 +1298,10 @@
                     </div>
                     <!-- Item 3 -->
                     <div class="flex gap-4 group reveal-on-scroll" style="transition-delay: 300ms;">
-                        <div
-                            class="w-24 h-24 bg-stone-100 rounded-lg flex items-center justify-center text-stone-400 shrink-0">
-                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
+                        <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                alt="Art Exhibition"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
                         <div>
                             <span class="text-amber-600 text-xs font-bold uppercase">Events</span>
@@ -1140,8 +1341,8 @@
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </div>
                     <h4 class="text-lg font-bold text-stone-900 mb-2">Email</h4>
-                    <p class="text-stone-700">General: <a href="mailto:info@amaderschool.zw" class="text-brand-900 font-medium hover:underline">info@amaderschool.zw</a></p>
-                    <p class="text-stone-700">Admissions: <a href="mailto:admissions@amaderschool.zw" class="text-brand-900 font-medium hover:underline">admissions@amaderschool.zw</a></p>
+                    <p class="text-stone-700">General: <a href="mailto:info@panamaschool.zw" class="text-brand-900 font-medium hover:underline">info@panamaschool.zw</a></p>
+                    <p class="text-stone-700">Admissions: <a href="mailto:admissions@panamaschool.zw" class="text-brand-900 font-medium hover:underline">admissions@panamaschool.zw</a></p>
                 </div>
                 <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll" style="transition-delay: 160ms;">
                     <div class="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">
@@ -1169,7 +1370,7 @@
                             <h5 class="font-semibold text-stone-900 mb-2">Admissions Office</h5>
                             <ul class="text-stone-700 space-y-1 text-sm">
                                 <li>Phone: <a href="tel:+263123456780" class="text-brand-900 hover:underline">+263 12 345 6780</a></li>
-                                <li>Email: <a href="mailto:admissions@amaderschool.zw" class="text-brand-900 hover:underline">admissions@amaderschool.zw</a></li>
+                                <li>Email: <a href="mailto:admissions@panamaschool.zw" class="text-brand-900 hover:underline">admissions@panamaschool.zw</a></li>
                             </ul>
                         </div>
                         <div>
@@ -1185,7 +1386,7 @@
                             Get Directions
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
-                        <a href="mailto:info@amaderschool.zw" class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-stone-300 text-stone-700 font-semibold rounded-lg hover:bg-stone-50 transition-colors">
+                        <a href="mailto:info@panamaschool.zw" class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-stone-300 text-stone-700 font-semibold rounded-lg hover:bg-stone-50 transition-colors">
                             Email Us
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg>
                         </a>
@@ -1195,7 +1396,7 @@
                 <!-- Map -->
                 <div class="reveal-on-scroll" style="transition-delay: 120ms;">
                     <div class="w-full h-80 md:h-full bg-stone-200 rounded-2xl overflow-hidden border border-stone-200 shadow-sm">
-                        <iframe title="Map to Thornhill High School" src="https://www.google.com/maps?q=Gweru%2C%20Zimbabwe&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe title="Map to Panama School" src="https://www.google.com/maps?q=Gweru%2C%20Zimbabwe&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -1203,13 +1404,12 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="py-20 bg-brand-900 relative overflow-hidden reveal-on-scroll">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/school.png')]">
-        </div>
+    <section class="py-32 bg-brand-900 relative overflow-hidden reveal-on-scroll parallax-section">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat opacity-40 parallax-bg"></div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Begin Your Journey Today</h2>
             <p class="text-brand-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-                Admissions for the 2025 academic year are now open. Discover all that Thornhill High School has to offer.
+                Admissions for the 2025 academic year are now open. Discover all that Panama School has to offer.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#"
@@ -1234,7 +1434,7 @@
                         <div
                             class="w-8 h-8 bg-brand-900 rounded-md flex items-center justify-center text-white font-bold shadow-md">
                             A</div>
-                        <span class="font-bold text-xl text-white">Amader<span
+                        <span class="font-bold text-xl text-white">Panama<span
                                 class="text-brand-700">School</span></span>
                     </div>
                     <p class="text-stone-400 text-sm leading-relaxed mb-6">
@@ -1312,14 +1512,14 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            <span>info@amaderschool.zw</span>
+                            <span>info@panamaschool.zw</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-stone-800 mt-16 pt-8 text-center text-stone-500 text-sm">
-                <p>&copy; 2025 Thornhill High School. All rights reserved.</p>
+                <p>&copy; 2025 Panama School. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1348,11 +1548,206 @@
                 observer.observe(el);
             });
 
+            // Parallax Effect
+            function handleParallax() {
+                const parallaxElements = document.querySelectorAll('.parallax-bg');
+                
+                parallaxElements.forEach(element => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.5; // Adjust this value for different parallax speed
+                    element.style.transform = `translateY(${rate}px)`;
+                });
+            }
+
+            // Enhanced parallax for mobile devices
+            function handleMobileParallax() {
+                const parallaxSections = document.querySelectorAll('.parallax-section');
+                
+                parallaxSections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const speed = 0.3; // Slower speed for mobile
+                    
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const scrolled = window.pageYOffset;
+                        const relativeY = rect.top + window.innerHeight / 2;
+                        const translateY = (relativeY - window.innerHeight / 2) * speed;
+                        section.querySelector('.parallax-bg').style.transform = `translateY(${translateY}px)`;
+                    }
+                });
+            }
+
+            // Throttle function for performance
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                };
+            }
+
+            // Add event listeners
+            window.addEventListener('scroll', throttle(() => {
+                handleParallax();
+                handleMobileParallax();
+            }, 16)); // ~60fps
+
+            // Initialize parallax on load
+            handleParallax();
+            handleMobileParallax();
+
             // Mobile Menu Toggle (Basic)
             const btn = document.querySelector('button.text-stone-600');
             const menu = document.querySelector('.md\\:hidden');
             // Note: A full mobile menu implementation would require a hidden div toggled here
             // keeping it simple for this file as per request for "basic"
+
+            // Testimonial Carousel
+            const carousel = document.getElementById('testimonialCarousel');
+            const dots = document.querySelectorAll('.carousel-dot');
+            let currentSlide = 0;
+            const totalSlides = 3;
+            let autoSlideInterval;
+
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.remove('bg-stone-600');
+                        dot.classList.add('bg-amber-600');
+                    } else {
+                        dot.classList.remove('bg-amber-600');
+                        dot.classList.add('bg-stone-600');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }
+
+            function goToSlide(slideIndex) {
+                currentSlide = slideIndex;
+                updateCarousel();
+                resetAutoSlide();
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+
+            // Add click event listeners to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+            });
+
+            // Start auto-slide
+            startAutoSlide();
+
+            // Pause auto-slide when hovering over carousel
+            const carouselContainer = carousel.closest('.relative');
+            carouselContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            carouselContainer.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+
+            // Gallery Modal Slider
+            const galleryModal = document.getElementById('galleryModal');
+            const galleryImg = document.getElementById('galleryModalImage');
+            const galleryPrev = document.getElementById('galleryPrev');
+            const galleryNext = document.getElementById('galleryNext');
+            const galleryClose = document.getElementById('galleryClose');
+            const galleryOverlay = document.getElementById('galleryOverlay');
+            const galleryCaption = document.getElementById('galleryCaption');
+            const galleryCounter = document.getElementById('galleryCounter');
+            const galleryTiles = document.querySelectorAll('.gallery-tile');
+            let galleryImages = [];
+            let galleryIndex = 0;
+
+            function updateGallery() {
+                if (!galleryImages.length) return;
+                galleryImg.src = galleryImages[galleryIndex];
+                galleryCounter.textContent = `${galleryIndex + 1} / ${galleryImages.length}`;
+            }
+
+            function openGallery(images) {
+                if (!images || !images.length) return;
+                galleryImages = images;
+                galleryIndex = 0;
+                updateGallery();
+                galleryModal.classList.remove('hidden');
+                galleryModal.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+                galleryCaption.textContent = 'Gallery';
+            }
+
+            function closeGallery() {
+                galleryModal.classList.add('hidden');
+                galleryModal.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            function nextGallery() {
+                if (!galleryImages.length) return;
+                galleryIndex = (galleryIndex + 1) % galleryImages.length;
+                updateGallery();
+            }
+
+            function prevGallery() {
+                if (!galleryImages.length) return;
+                galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+                updateGallery();
+            }
+
+            galleryTiles.forEach(tile => {
+                tile.addEventListener('click', () => {
+                    const imgs = (tile.dataset.galleryImages || '')
+                        .split(',')
+                        .map(url => url.trim())
+                        .filter(Boolean);
+                    openGallery(imgs);
+                });
+
+                tile.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const imgs = (tile.dataset.galleryImages || '')
+                            .split(',')
+                            .map(url => url.trim())
+                            .filter(Boolean);
+                        openGallery(imgs);
+                    }
+                });
+            });
+
+            galleryPrev.addEventListener('click', prevGallery);
+            galleryNext.addEventListener('click', nextGallery);
+            galleryClose.addEventListener('click', closeGallery);
+            galleryOverlay.addEventListener('click', closeGallery);
+
+            document.addEventListener('keydown', (e) => {
+                if (galleryModal.classList.contains('hidden')) return;
+                if (e.key === 'Escape') closeGallery();
+                if (e.key === 'ArrowRight') nextGallery();
+                if (e.key === 'ArrowLeft') prevGallery();
+            });
         });
     </script>
 
