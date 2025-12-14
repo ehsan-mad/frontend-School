@@ -126,10 +126,20 @@
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <!-- Background Image with Overlay -->
+        <!-- Parallax Background Layers -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                alt="School Campus" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-stone-900/60 mix-blend-multiply"></div>
+            <!-- Layer 1: Ungrayscaled (Color) Primary Photo - SCROLLS -->
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-attachment: scroll;">
+            </div>
+
+            <!-- Layer 2: Grayscale blended overlay - FIXED -->
+            <div class="absolute inset-0 bg-cover bg-center grayscale mix-blend-multiply opacity-75"
+                style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-attachment: fixed;">
+            </div>
+
+            <!-- Dark Tint for Readability -->
+            <div class="absolute inset-0 bg-stone-900/40 mix-blend-multiply"></div>
         </div>
 
         <!-- Content -->
@@ -145,7 +155,8 @@
                         Minds.</span>
                 </h1>
                 <p class="text-lg sm:text-xl text-stone-200 mb-10 leading-relaxed max-w-2xl font-light">
-                    Welcome to Panama School, where excellence meets opportunity and we prepare students to become confident, compassionate leaders of tomorrow.
+                    Welcome to Panama School, where excellence meets opportunity and we prepare students to become
+                    confident, compassionate leaders of tomorrow.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#tours"
@@ -174,8 +185,10 @@
     </section>
 
     <!-- Gallery Modal -->
-    <div id="galleryModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm px-4">
-        <button aria-label="Close gallery" id="galleryClose" class="absolute top-6 right-6 text-white hover:text-amber-300 transition-colors">
+    <div id="galleryModal"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+        <button aria-label="Close gallery" id="galleryClose"
+            class="absolute top-6 right-6 text-white hover:text-amber-300 transition-colors">
             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -185,18 +198,21 @@
             <div class="relative bg-stone-900 rounded-2xl overflow-hidden shadow-2xl">
                 <img id="galleryModalImage" src="" alt="Gallery item" class="w-full h-[70vh] object-cover">
                 <div class="absolute inset-0 flex items-center justify-between px-3">
-                    <button aria-label="Previous image" id="galleryPrev" class="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors">
+                    <button aria-label="Previous image" id="galleryPrev"
+                        class="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
-                    <button aria-label="Next image" id="galleryNext" class="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors">
+                    <button aria-label="Next image" id="galleryNext"
+                        class="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 bg-black/40 text-white px-4 py-3 text-sm flex items-center justify-between">
+                <div
+                    class="absolute bottom-0 left-0 right-0 bg-black/40 text-white px-4 py-3 text-sm flex items-center justify-between">
                     <span id="galleryCaption" class="font-semibold">Gallery</span>
                     <span id="galleryCounter" class="text-white/80"></span>
                 </div>
@@ -213,8 +229,10 @@
                 <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-brand-900">
                     <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/25"></div>
                     <div class="relative space-y-6">
-                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Boys</h3>
-                        <a href="#" class="inline-flex items-center px-6 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-md">
+                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Boys
+                        </h3>
+                        <a href="#"
+                            class="inline-flex items-center px-6 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-md">
                             Learn More
                         </a>
                     </div>
@@ -224,8 +242,10 @@
                 <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-amber-600">
                     <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/20"></div>
                     <div class="relative space-y-6">
-                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Prep</h3>
-                        <a href="#" class="inline-flex items-center px-6 py-2.5 bg-white text-amber-700 text-sm font-semibold rounded-lg hover:bg-amber-50 transition-colors shadow-md">
+                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Prep
+                        </h3>
+                        <a href="#"
+                            class="inline-flex items-center px-6 py-2.5 bg-white text-amber-700 text-sm font-semibold rounded-lg hover:bg-amber-50 transition-colors shadow-md">
                             Learn More
                         </a>
                     </div>
@@ -235,8 +255,10 @@
                 <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-brand-900">
                     <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/25"></div>
                     <div class="relative space-y-6">
-                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Girls</h3>
-                        <a href="#" class="inline-flex items-center px-6 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-md">
+                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Girls
+                        </h3>
+                        <a href="#"
+                            class="inline-flex items-center px-6 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-md">
                             Learn More
                         </a>
                     </div>
@@ -246,18 +268,22 @@
             <!-- Who We Are Split -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch reveal-on-scroll">
                 <div class="bg-stone-100 rounded-2xl p-8 sm:p-10 lg:p-12 shadow-sm">
-                    <h3 class="text-brand-900 text-2xl sm:text-3xl font-bold uppercase leading-snug mb-6">Who We Are</h3>
+                    <h3 class="text-brand-900 text-2xl sm:text-3xl font-bold uppercase leading-snug mb-6">Who We Are
+                    </h3>
                     <p class="text-stone-700 leading-relaxed text-base sm:text-lg mb-8">
-                        Panama School is a family of learning communities that guide students from their foundational years through college readiness. Set within a calm, nature-forward environment, we balance rigorous academics with character development and vibrant campus life.
+                        Panama School is a family of learning communities that guide students from their foundational
+                        years through college readiness. Set within a calm, nature-forward environment, we balance
+                        rigorous academics with character development and vibrant campus life.
                     </p>
-                    <a href="#" class="inline-flex items-center px-6 py-2.5 bg-brand-900 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors shadow">
+                    <a href="#"
+                        class="inline-flex items-center px-6 py-2.5 bg-brand-900 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors shadow">
                         Our Vision
                     </a>
                 </div>
 
                 <div class="relative rounded-2xl overflow-hidden shadow-xl min-h-[260px] lg:min-h-[360px]">
-                    <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Campus Building"
-                        class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Campus Building" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -269,13 +295,17 @@
             <div class="text-center mb-14 reveal-on-scroll">
                 <h2 class="text-brand-900 font-bold tracking-wide uppercase text-sm mb-3">Community Highlights</h2>
                 <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Student Wins & Team Moments</h3>
-                <p class="text-stone-600 text-lg max-w-3xl mx-auto">A snapshot of recent achievements, awards, and campus life moments from across Panama School.</p>
+                <p class="text-stone-600 text-lg max-w-3xl mx-auto">A snapshot of recent achievements, awards, and
+                    campus life moments from across Panama School.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                 <!-- Leadership Hike -->
-                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=">
-                    <img src="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=" alt="Leadership hike" class="w-full h-full object-cover min-h-[220px]">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer"
+                    tabindex="0"
+                    data-gallery-images="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=">
+                    <img src="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps="
+                        alt="Leadership hike" class="w-full h-full object-cover min-h-[220px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                         <p class="text-sm font-semibold">Leadership Hike</p>
@@ -287,8 +317,11 @@
                 </div>
 
                 <!-- Silver Award -->
-                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/904531424/photo/two-school-girls-holding-hands-on-way-to-school.jpg?s=612x612&w=0&k=20&c=tVchzRSVqQUD6N7iKUvLZ12PSFH_F0Ha7zghseGwDd8=">
-                    <img src="https://media.istockphoto.com/id/904531424/photo/two-school-girls-holding-hands-on-way-to-school.jpg?s=612x612&w=0&k=20&c=tVchzRSVqQUD6N7iKUvLZ12PSFH_F0Ha7zghseGwDd8=" alt="Silver award" class="w-full h-full object-cover min-h-[220px]">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer"
+                    tabindex="0"
+                    data-gallery-images="https://media.istockphoto.com/id/904531424/photo/two-school-girls-holding-hands-on-way-to-school.jpg?s=612x612&w=0&k=20&c=tVchzRSVqQUD6N7iKUvLZ12PSFH_F0Ha7zghseGwDd8=">
+                    <img src="https://media.istockphoto.com/id/904531424/photo/two-school-girls-holding-hands-on-way-to-school.jpg?s=612x612&w=0&k=20&c=tVchzRSVqQUD6N7iKUvLZ12PSFH_F0Ha7zghseGwDd8="
+                        alt="Silver award" class="w-full h-full object-cover min-h-[220px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                         <p class="text-sm font-semibold">Silver Award</p>
@@ -301,8 +334,11 @@
                 </div>
 
                 <!-- Team Zimbabwe -->
-                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=,https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg">
-                    <img src="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=" alt="Team Zimbabwe" class="w-full h-full object-cover min-h-[220px]">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer"
+                    tabindex="0"
+                    data-gallery-images="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=,https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg">
+                    <img src="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8="
+                        alt="Team Zimbabwe" class="w-full h-full object-cover min-h-[220px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                         <p class="text-sm font-semibold">Team Zimbabwe</p>
@@ -315,8 +351,11 @@
                 </div>
 
                 <!-- Water Polo Team Photo -->
-                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://t3.ftcdn.net/jpg/02/77/89/92/360_F_277899237_BW70uPU1RSPIFgxRS4Ujst4Uc4KaHGSI.jpg">
-                    <img src="https://t3.ftcdn.net/jpg/02/77/89/92/360_F_277899237_BW70uPU1RSPIFgxRS4Ujst4Uc4KaHGSI.jpg" alt="Water polo team" class="w-full h-full object-cover min-h-[220px]">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer"
+                    tabindex="0"
+                    data-gallery-images="https://t3.ftcdn.net/jpg/02/77/89/92/360_F_277899237_BW70uPU1RSPIFgxRS4Ujst4Uc4KaHGSI.jpg">
+                    <img src="https://t3.ftcdn.net/jpg/02/77/89/92/360_F_277899237_BW70uPU1RSPIFgxRS4Ujst4Uc4KaHGSI.jpg"
+                        alt="Water polo team" class="w-full h-full object-cover min-h-[220px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                         <p class="text-sm font-semibold">Zimbabwe Water Polo</p>
@@ -325,7 +364,10 @@
                 </div>
 
                 <!-- Student Achievement -->
-                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="data:image/jpeg;base64,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" alt="Kunashe Katema" class="w-full h-full object-cover min-h-[220px]">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer"
+                    tabindex="0"
+                    data-gallery-images="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA3AMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgQHAAIDAQj/xABJEAABAwMDAQUEBQoCBwkBAAABAgMEAAURBhIhMQcTQVFhFCJxkSMygaGxFRYzQlJicoLB0eHwJDRTc7LC8SY1Q0VjZISSogj/xAAYAQADAQEAAAAAAAAAAAAAAAABAgMABP/EACQRAAICAgIBBAMBAAAAAAAAAAABAhEhMQMSQRMiMmEEQlFx/9oADAMBAAIRAxEAPwCx9Asg6FsrShlKoSMg+oqt7q4uzahutkdaU4hbQcbdUeQkZwf6Vaui2wjSNlT/AOxa/wCEUsdoOm3zKkagYeQUey9y6ypHOOfeB+2t5CiqdMOzY+o3V2+fHhu90QXXyACOOKOLvN0nS5UG4XZqQwwncNg91w+nHhUPQEjuNUyz3kJClNbQqX0znw9aJ2C4PHWl0bckQmRIbIcX3OU4H7IpnoyJUZ59TCAvVbsJH1UsIRnaK2WqIB9PrC4r/gOK7QdPWyU6+Jr2FpVhOyOVkpqcNG6fJGW57n8Mcj+lZaMwC9IsiBk326Oq/fcJHyrVmTpVXul65uEftPH+9NI03Zoe1TFvnlSzt+kSAD86ko0vaG/q6fk/zvJH/NQ8mFF2TpRpIKoEpw+rhribvphA9yxKX/G4r+1Pf5EtyB/3CwMf7WUMV4bfbkf+T2ZP8b4P/LRMIX5x2NP6PTsf+bJqJJ1BG9uYdascZsI527BhXxFWDcH4sOIpbcOxknjajk/8Nb28ohQ0tIlWvjJz7Monn7axhORq9QSTHs0UHwCWE1t+eN02/Q2tAPoz/hTo5cw3k/lGIAPFEMn+tRmZd0u7gas04O4+ssxNqB9prBEdesdROOhsMIbJOAO7xn7qOQdH6quLBlSZsW3g9O8QVEj4DGKaDKten3EiW+LldVeSR7pPj6VKlzXJCgXV5x4eApJToaMWxKjtaltC1QxfIyWuveoi8qPzqUr8pPo2ytXOpSrgpRFArteJCjJGAOlDFyCFYPI9DUPVZb0lQudoEdUW2R0i+v3JJUr6JxIARx1GKdrdamFwY+7Vk8/RjjvgnwpC1253kVjAx1phiFCojJ2gnYAcj0p3yNRTFXHcmhoTp+3K4VfJ7nxmH+9YdJ2dZyubLX/8xX96WQ02eiRj4VycZT0AI+BNL630N6P2NX5oWEj9G6ser6j/AFpBMRuL2g9xESQhvdtGc/q1PW3hGQ66nB6BxVDrSVDWDSkgqJQvqc03ftFiuHVo5asTia8D1CR+FLFnQlbj2/O3jIBxnrTTq3/XZGeuMfdQLSjSlyX1okRmVIwR7R9VXpVvCJeWM9pDQgZY2oT3hHHpXX2ZSve7snPmamQHpEuH3r7EdC8kbmRhOBXhCScl1ZPjiuafyZ0R+KLc0ilxGmLUl1ISoRGhgeWwVprU40tcvVkip9nTstUJH7Mdsf8A5FDddK26UuH+7x94roOQp/SllbYcN+ke+rcoMtbPdHhuPnRe3agbYuCiqzraJVtMhqMM5+OK80JNROQmK6he+K8WwokkKByoY/zmjN/eamMLejqkMraXsCkNnk/CueUn2bOuEE1R3cmsQ1SJPtUvITucQ0EhasenSoB1nbSPdReXvgvb+BoREk9xckuzFqQhlOVkJyFAjjg0cGpbWB9GtWP3GUiq8UnJWyXLFRlRBf1M2+Mx7PcHAk5UHpCufgM1g1K4r6umHMfvrUr+lS39Qx1pS6hmetLZ5CW+fuFR5N5XcG0oQ3cYQCgouuBSQQPDpVNEjmbte1KPs2lYwA6FTeTXhnavUfo7LEbH+6H96MG8wto+mW58O8V+FRLheY6IjqkNOFW3CSqO5jPh1rWgpNiner3eUKbEx5KZTZJQxFjBSs/ZmoEXU16uCgym4ONO5CShaEo59DirZtvsluajxXUNmcprcs7QVKPjk0qayjRLszJbhIaRNaSSSEYJ9Kl3osuNNHG12mVCUibqS8SEI8IyF5W58ulHJ9yuUu0OuWxtNut6E5ASffWPj4Upw7lHbiWubO3rfdYKnO95JOOpNNs6ShOjnnlJCkdzkpB6io83M40l5MobBLrUaDcICYLK33VJV3i8bvLkmj61JBCT1NLDZmyLxbnrc07CYLalLSHgsqTxwR4UfdkJXLaSk4VgnFX5IqhYNgm8nErbkpOKgqb4BVkZHTHWp92Wn2ohXkOtQCoY2gY9a5LOtLAra1z3bA8MGmKONsZrJyMDgfCl/WnLbHjjjNMLZKWmzjCQBz9lVk/aiUPkzV7dnGc1rkAdSDUW5XaHbgPaHSknogDKj61Gh6gt055LbD5BVwErRgn4UlMe0EiNwHJOaiWNH/bFrHH0K/6VLUoBWAeM8CuenU95rBvj/wABZ/Cnhpicm0DdWZMyWfEZoboq3mbKd+haeDe0ll1e3dRTVf8ArM3+I0E03JMUurDCXgVYIUSPlXW9I5fJY7jSW2wgQTFHUsg5A9ailLgPu7QPKpNmWmZb0uqS40lRI7suFWPTNSCloYBZFckvk2dMcJItSGnZFZT5NpH3UD7QDjSc71CR94o3FWVxmVKSUlSRwaU+1S7Q7fplbMl3a5IUA2kdVYIJ/pXUlbOQQOyQOS7zc4gPuJR36fRfT7wfupkvBuCQFI7vaHN2/vCPmKT9E6itOmtTpekF5iPKjtpcWDuCVHB97xCfH7as+92yDcHlOqcUqOyfpm0LAST1wT+NJycTbwX4ubrhmmhrfElRpFxdSH3nl92e8SDtCT4fHNNaI0dH1GGh8ECqzf7VbFaLmmFb2TLhY+leYwAhXAATng9PD0qwbBe4F/gJnWt/vWCSk8YKVDqCPA0yj1VEpycnYQCEjokD4CoF7bQ5FSVjO1YIojUG7J3RSB4EGhLQFsDpQMcAfKget5PsWm5T6UgqSBgeGc+PpUm86httlb3Sngtw/VabIKj/AGqu9Ua5VeIi4CIiER1/W3KJUr04xSR45PNFe1D+3c3JcKLNgQ1KywMKO3eg+RzQuRMkLilD8QIdOU5wncsAfu1y0Pck6jsTzMOV7NKhABLB/wBngc48iQrnwNSZEZNoYVcrw62lLXvbnVfR/L9Y+lB8UrorHlj1ti/cGW22WkuN7EIjr9w9QeBijs5TCNHNtPLSO8ZSAknBIpTvepLTqSKZ0dLzEpZUl5haiCk8e8PDBH9aQLjcpkuapVzfdWGlBGE5ASnw6fCufk4HKS+h+669v6WkLVDTfYXsuW0pZKstrIzyKYlspVJDvAKQaVbLLQ5MhCEA42loISUJwNpPWnAp99fQADkk4FNK/JsXgAXcpVKKVDOAOaGe+V4b2geeaNXhtKVLkKcQW+n1utCnUnaO7KdviKmP4FvWOSiOknJ3CmBHDaU9Rxk+VL2rd3+ig/tj7OaYUoSEBS+PDqMVWSuMaJx+TNodotjSBPuLTTzzqyQp1O4IHgAP60D1ZBhrXviNNpdRkhxsbSkjpTK7JaXGjRUtIkLSokLWnlHj0NALtI2qfblNRw64rIebwcDyHNBqfbqXUY9bJaV96lDhTtKgCR9lddJg/ncrkZEZWB58iokNYcZbLbveDxV5VP0WArWDiioDbGJz/MKeMWlJSOabumgHqj9NM3ddxoNpsMl9Ik7u7C1E4OPAUX1SrLssjxWr8aE6faLzqG0fWWspHyFdM9I51ssmzKbNsb7hOxsqOM9TzXSRnvDhw/OusSEI0BtgAqwBhw+NeO71ryAjHSuR7OhPBaaOEJx5CvmntT1N+Xr7KdYe3RGCWYxHQgdSPic/dVv9omqxZdMOJbS57XKHcNhCc7cg5OfDjNfN7gU9JYbUghtTiU58MZFd0cZOQIS3u9kPEcALKOecgcf0rl7Q+GHGEyHUsunLrQWQlZ9RnmuTat4UvjClFXHqc1oTT+DGwUEdPlVt/wD89XRff3i2OH3FJbktp8j9VX3bKpxZUSEAZUo4A8yauHsnsknS16kP3dISt1nuhsWCkAkHnxBBHw8qnOSWwqLlouuqg7adUzYU5i0wXFMoDfePrR9Zeeg46Ac/HPpVrCWP2CaojtmbcOq3HAlexxlBHPXgj+lbjWQCN7cXgFZVkJxjPSiVpcUEvuNkDLWCVI3AZPGeDUK9WxuJpywyGmVNvzfaFOL8VhK0hIHpjp480RelMQ7MLdCcS6+5zKeSeE4/USfE+Z/yBOcmqRbihG7k8A223GZapbUq3SFMSGeEuNnH2Y8R6V7d7tcbzIEi6zXZTgOR3iuE/AdB9lQ1oIGB1FcFLKTyfhVf9I/ZIbdLagpBO7OPhVh6ft9rk6duT4WzJkPLaakoCtyDhRIWPEZB5HgRVYMvlL6coCuCMEkA/Lxo1p+8rtaZYaG9DqB7hPUpORz8/nXPy8b5dMtxy6bLVg4jaiQxHQltsMABKRwOaKzW3jKAcVuaCFEjgY6Af1NL2np7N1viJUZWUKZHHik+IPrRS+XGKq9M2UulMl1G8ADIVnw4+HjXK4tujpTVidqNiSw44G1rS2edijniiLMthqzR5LpCVLbA4PKj6UwuaXizmHFTZqAhKD3gaP6I+GTUHS2m0eysSJW2THabLsbeQUrKh19BQfHKOxnOLxEQpt2j3aShLkeQ22hzh4nABHmMUxyl+0FMdl8tIUnc8ts4WEeQPgSa766ciNW1uNIbjtoKQtKY45CvT0pHt10dUt8NnCTt4Bz06fjXRC4rv/B/xuGPN+QuJvD2W1o+zwZ1glpKSy97VsjrRlSwdifM5PUk0M1lp+FZbA6lx4ybm+6hAW4BkDJJKRngcGkS1aum2TUAuMU940j3VMFZCXE8Z88E44OPKo87U8683965XAp3vDalCT7raR0Sn/PNU6+zt5DDlhL85L9LCkBfcXX2dA2hxsKKR54zmmPRPOqZe7wjnHH71V2u6uflREtKuWyOnkOv9qsXs/UHdTTVpUNpjpKT6bjW5G5Ls90c3OoR5pRhqxZ1AvcZJ81H8a20CyHbqzn9UrUePSot3Xllfrk130U53Nwir3ZAcPu54oy0jlRZ6+W8HccAbQBxUZSFZ/Q9fMipTcgvxErQQhJG4etR1KAOA4sj0/6VzPZ0LRvri2vzrUlqVHIQvKw8OdhHSqRkqEeQ6y6pJWyTu2DhIHrV4dpmpW4dgbEc4JyRnnOP8cVRSWiIS3HSVOSFZ97qEp5+8kfKuuMsYOZr+liRuyxiVZY8hu7liQ+2HNobC2skZA8DVe3m2ybRcHYUtG1xHiDwoeYNFLBqqdZoDlvVufinJbQo52HyweqT4j7Riht6u793kIdkZAbTsaSpW8pT6qPKviaVd7zoeXSjbT8VidNMR5LZecR/o6lqI+kSQoAEeYBGSD1q244uk4pbTa7huVxuMcJSB/EFbflj4VVmjoj82/MKhbS7FBfVz4AeHnX0pplTws7PtH1ykZFLOKk6ZoTlBWiRa4jzUBlEx3e+lHvnrz8aRu0LRb+oLzDfM3uYTbBS4duSlW7gAZ5zk9emKsNtTgJynjwoRqlakMNOhzu9uc58azbjHAIe6eSktexmrRabLaWVl4QlPuB9acH3lJwPu5+ylggIG0DCcZAp27R2CWYDjzZLkkLWB0OEhPQeR3n/AOtJks++2vB7sIKsdCRxT8LxbDyYdIguK61GcIx+741ODTa0qVwB1A8qKaU0jL1LIX7IUssNnK5DmcIz0GByTx09etO2IlehXaaccdODjA+tUxlJS42gHgqxg+OeKLXm0P2S4OQJjQCgr3CnlKgcYUPPr91S9Gxo0m8Jcda3ts4UoDwPGPxodopBirlRI7Orsm1z5CpmURwyp0k/q7fD7a6aQublz1u5eJqiCrepQ67EkHA+wDFF9C21KdRTXJUXCO7UkJUPBR6fKhkqKxp7UQjQYyktSm3Gwjfgkq4Tz+yOtStW6KU6VnS0ezTtVT5twceTbZa0LchtqP05WcIQscZHiRVuszLdcYqmIL8UIZj7kNIUAlI6AHy8qpHvWbY3EixFl5xlwOFxWRvWPHHUcmoLyFGRDjBax3LAKk7iMkYWQfPkj7aEffsPK4xl7DNX3T227PhsFDQcKUJz9UDjH+fOh8Rt6IyzJcQpKZWSyOm5KSAT8Mn7q4XEBb/u8qySrB65ondnojsC1Jje6+hna8QMZVwQfxqyaToWEpRfdeAWs4JGen31xW5gggjIo7I01cGWEqcXHLq8/RJdyePhxQZUVxCyH/olA4KSOaCkpYQHGUfczWMStB93JyTVl9lD2+4T1q57uKhIz/EarVQQlJAII8cjjNWP2QJU27dVKO0iOhQyPAlX9qXkxCgRbcrYu3JWY/8ALXTTKfp2FZHC/wCtRp6v9GQD+wPwFTtMxJEpKG2EqUrKiNg8q0gIs23LBtsZKUgnZXZBeAwAjH21whMuR2W2HAoFsAHI5rfa3k+4o89cf41ynStFf62Ydud1bjlMhRaaHdIbBO8k5P4dfCoN9025BtrLs4ITJfXhKEqyG0DoPjzzTtKKWrtGD4KVJQcccHmh2tiHkRgcEAEjPxFHi5JNxjWBZxWWVm9CUhWErH4VqIKQMuOZ+FTJycOKxzk+NbxkpKitRwhH1Rjj1NdZzk3R8Ge9qGKiz5akIV3inQcJQgfWJ8xjj1zX0uV94W0tcICfKqB7PnRHk3N5S9mIm3d6lQ/tTpdb9fmyhcEq290DhIyM1NyinkPVtFnJUsbtx6UA1ko/kxR49CKri3XXU8ZZuDlwUoLUErQ50R9lN86S/K08pUh9uQ4o/Xa6UJSi9MMU07NrzpWFqe1QUy3HmXmUHu3miMgKxuBBBBB2j5VU2tdN/m5c0RWZqnUqaBQXQEFQ9ABjH9jV7wfdgsAnHuDpVXa7iITqCU8tRdUrG3ed2wYzgZ6DJPzo8bzQZLyVZvcZGAcDPRQ8fjVhaG1lbLVZPY5zojvIdKiVch7dk548sAYpXuAbWVJWkZ8DQhTLOcDIUODycU80mqYsZOLsOa11GNRXtLkRalR2mghtRSUknqTg9OfwqfpEv+wvJiKQXgU97tQE7c5xnz6UqtspR0GKdtBs7bXLkKdKAuc22Du491BPT+aocuIUivFOp2OGkWvZripLiApakJCifh1od2gNssaosT3dpSQ0+cDgrI2gAfOpen3M6pkIyo5AwfDGK4dq8USG7e8FFLrRWUrQeR9X/ChHLobt5EHUEaTBlRrhKZ2x1e8j94jqB5+FBmZLqu8kPrJd9Bxk9T91HdY36TeokaOUNJbZAUpA/VIGBjyHpUPTkOFLt9yMg5dQW+7QFYOMKyfw+VVi+kbYkl3nUQOl1eRz4Y6dBUnbvhtJTyBuSR/n0rncGFRZCkqTtwTtB8R4UZtUfumGnFqPvo3Abfqc/wBqeLTdiO0nEiJvtwh4bdQVtJSkIbPuhGPh1oZcLgZklTwRtJAyM0aujaXE4IyojqRS73RBKT4da3VJ4N3k1TGXRUaPNflLlMIc7lCVN7hnaTuz+Ap07PlKTKvrmQcR0ckfx0vaJtrsSBJlvnamQkbEnyGeftzTDoMZa1EvKRhhIx/Kuot3ZRKkrEu4/oUp/cFMOh1SkIjmMHAStzBSOvAzS3cumPTFNehr3+TWIoUOGy8emeVbf7VWTI0PpLoT3rmS6oAubuua5KI3HL4Bz0wK7yZHteX9w+lG7gdahqcWgJSCnhI61yvZ0rQyN6eackB+WW3V7NoGOB40kdqsViAuD3CQAULJx/LVloURzVc9rDEiW9FTHaUstR1rWQOEJyOSavFVVEG2VPMH0Ch4gnmpW1IjJzycHAHgTUaSAIzhwQQSg+uP8KIPqabi+4crWjd9lVsUf+xq0wbhbLyqWyHcvtt+8jgAJJ4P8x+6rITZLahtDaWU4SMDk1VHYi7KVdbk224TFDCVuoJ4CycJIHwChn0q38n9qoySsKIqrDaikpMZGD19a1Fit6YvsrTfds5ztScVL97zrwk0KQbZiYqENhCFYCeBmqc1pOTJvEpyMQ8grwFdBgACrixngnIPUVQ+qESLdc3o7sUxPeOxoZICcnGDzketPx7M8i9OKlbysJGBkYOaHoWHUjoc00aJhM3bV9tizWg/GW6S42TwQEk8jyyBS3IQ4mU+h5AbeQ4regHO1efeHzyPspmxaPDwkkZzg4pw7OoD1walx+97uKZDahu5yoJVk/LbXPsxtYu98eQ61vQ3EWTkcJUrhP4mm7s5scaQ3czIZUEtvJbQkKxtIBycj4j5VOWcFIpVYQsVgMW/yJIdKwnCMk9eK4dpUfECO8ErITvBKRkAnbjNNEextw3u9jPOgn9VSioUqXy6TZOqvzfjth5K0JJxwGz1Kj6YIpdZQY1plWNsHfJUtB2FAG4jg1BaQYrgfaXsUk5zT72hMOWtEeCppKEnLmU5IUPj50taatJu0iYVLb/0aOp0oWsJzkEDHn41S7jkR0pYBUlhG913YrBJUNxyRRq/PGM+3HZQQEIT7qE9eKHvIU6Wmkbe8OBg8DccDmjetoEq13plT42LcaKklJznqDzW/Y3ggPrRtV3ywXCPqAfVoMphSpCQkAl1e0BPjnpU6RhBQkoB90ZI4NaQWJMu7RGoQC3y6A22eh5zyfDpTSeALY/MsLiwQxvDhbbICseHhXuhCBbNRngEIHOOfqKohMtM9EZxfcAICCVHePKh2hQRY9RuDH1ccj9w1zxT6uy83bQkXLrU6ylfswwM+6rHzqBcz9Ir40e0nARJjIU8dqNhKTuAyc1eeiCH+IUIhR0KR7wZGflWd60QMpPyrxbZbSQgFSQkbSTUbYk8lYB8uK5bOlIf23BjypD7UFSFwZCWQoJ7lpSlY4wHDkH5g49KdEOYPhihur4btx0zcI7Cdzqm9yU+ZBzxXRHZzvRTul7L+ct9RBcO1rG94p5IR6eXlXbXkBm2amnR4jQbjpSnu0DolJQK27JLguFrNLJxsnNKaJI5yPeHw6Gj3axFDF7ZlukBl+OAf3lJOMfeKdrrIVZRr2InberknwMVOfiFf4mrfNU12JupF+moJO5yJlPHkoZq5OtTlsZHua8ryvcigY8+FV/2wWxt6zs3MKSh6OsNkftpJ6fEHPzNWAQMVAvVphXqCqHcGlOMq59xRSoEeII8awT5xtd2es90jz4yi2+w4FDHVQzynnzHH21xuD6ZF1nvoCglyU6sBQwQCsnn1qPPW0H3228qjhSg2o9VIycE+uMZrdxTzkh52Ry844pbuRj3ySVfDnNUFHDsuuz9u1Etltvc1KYUlxR8NoKgfs5+fwpm7Hpr0q530OuApw0sJBzzlYJ+4UB7LLYJ1xuLxcCXGohQ1uOPeXxn5D76duz3S69NqnSprjffytqEtt5KUITk9fEkmlYUN9xcfat8pyJjvkNKUgEZ5AOKrXsmnG56hvk2UsrlqZaw4ryJVn8BVlrebUkpUr3SCDgVXGjtO3DTerXVobH5NLCm+8Bzu5BTx5+dKngNBPtfQk6XbWQncmSnaCfMHpVSsafmyNTCxxltLkF0o71KvcIxyc+QGatntNhP3m3RGYsfvihxSjuWEBPA8CRzXDRumI1qf/LUl1Ts8sbW2sDDXHIyOpo2qNRVF8jmK8/HYc70hxTSF45Xg4z9tWH2oNQmE6fhlXePx/olpJ57tQSnk+eRSXawu6avgh+KlxbssOLZSe7CRu3HzwB1+z1pz1ZpaNGNwvUy4uS1q5YaV7uxwnqcdQPKm8gEOeQp3GQo5JOPD0pr7JrcJOopMlwEiEyCjjgLWSB9wVSmruhwDuI/V69asfsf7pFsuL4fQXXZCQpsHJQEjjPxyTRnoC2PNxjrdgPttpytbakgeuKR7HZ51l05e03FoNLeypI3A5G3FP3fp8DmhmpHUmxTj49yqpWOUXcz76vjTDZVBFoYSR4H8TS7cD76vjVo6TtUGTpS3LfZSXFNZJ8epqk2LEnlZDCPezlseHpQ9SVrUVdM/GirsUpCUpKSkAjB60PMd0dWV59DxXM1k6E8DeHOOOMVIbeBAORzQtrCBxW7Kz3qkHw5FVInsXTlkiXhd2ZhNtzVjlwE4GepCegJ86S+2Zlxz8luuk+xN7wEjA+kOMkn4Dj7afkr4FK/aNufsaIwZ3Fx0HvFYw2Bz4+J6VSOZKxXhCZ2RNKVqxS2d6QxHUXRnIAOABx61doXkVUnZZDm2u7S3JDSm48lkDcVJ5KTkYwfU1Z2/wDXSfsHjW5FUgR0TSa8Jrglzdzj7M1vmpjHXdQrVVwVbtO3CW1+kQyrZ8TwPxoj1/61xnQmJ8N6JJRvZdQUrTnGQaKMfNVsabdvltRJRlpUxlLifNJWnI+VMHaLbVWzWFwBA7qQvv0YGcbuv35qy7N2dWa1XVu4ByTIcZOWkOqTsQrzwAMmkTtft5gX9MhgqKJiC8eehGAR6Z4NUu2Cgl2Ls5n3VxwNhIZbSlPieVZOOuBgfMVa2xPgkD7KpzsUY769y57xJLTfcowc+8rk8dcYHWrnI9BSS2ZHIoGOgrUtjzxmu/I6AVmT4gfKhQSKWxjGBXNSFYISU8Dpip2D6D7K1KSep+6hRisPzDvMS4sTbbJiiQ0rIdVuGR5EY6eFOs2AzLiqTcmmXGR7ykrTkDAov3f+cVEu0Jc62SYjb3cqeRtDm3OPsot2Y+e7nCWm8vupDaUOOqLaGVfVTnpj4fGmrsWDqp12QHUBKEslxBAysZXznwwfxru7oK/tuKcPcLI5yHvrenIrp2T2qdC1BOfkRno7SGC0rvUFO4lQwBnr0PNM3aBVMspTXkflQrUTTq7LMbaSpalN4CUjJNHyodR0rmsk9M/OprAxQk+1XALwqFJBP/oq/tVlaZ7xjT8FlaVIWhrCklJBHPrTYs+aajuY/wCtNJ2ZKgO44rnlVRlOLz0VRh0JI521EUjngD5mkoYItq46CugVlxB45OKysphSYgZr12Ow+EofYadT5OICvxrKysY6R4kZhIUxHabKuDsbCfwFSAB0xWVlEzMwM9K3AFZWVgGYFYeKysrGNfCq27Z4jXsMOdg9+kqaznjb1/pWVlNHZnoDdh0hxF+vERJ+icjoWoeqFED/AIjVyCsrK0tgWjYfE17tGPH515WUoTRQxWAZ61lZWMYRiuSzXlZWMcDyoA1rsHmaysoBNMkKxnNYrr0rKysY0WceFR3VH0rysrGIT7hT0AqIXFE5JrKysE//2Q=="
+                    alt="Kunashe Katema" class="w-full h-full object-cover min-h-[220px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                         <p class="text-sm font-semibold">Kunashe Katema</p>
@@ -337,8 +379,11 @@
                 </div>
 
                 <!-- Campus Moment -->
-                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg">
-                    <img src="https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg" alt="Evening on campus" class="w-full h-full object-cover min-h-[220px]">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer"
+                    tabindex="0"
+                    data-gallery-images="https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg">
+                    <img src="https://thumbs.dreamstime.com/b/students-holding-notebooks-wearing-school-uniforms-girl-students-holding-notebooks-wearing-school-uniforms-98786152.jpg"
+                        alt="Evening on campus" class="w-full h-full object-cover min-h-[220px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                         <p class="text-sm font-semibold">Evening on Campus</p>
@@ -347,8 +392,11 @@
                 </div>
 
                 <!-- Group Visit -->
-                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=">
-                    <img src="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=" alt="Industry mentors visit" class="w-full h-full object-cover min-h-[220px]">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer"
+                    tabindex="0"
+                    data-gallery-images="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8=">
+                    <img src="https://media.istockphoto.com/id/534576365/photo/elementary-school-children-wearing-blue-school-uniforms-raising-hands-in-classroom.jpg?s=612x612&w=0&k=20&c=LEdI0qaduUMsCWw32y0OASviPJvo8vrE1hYSE0GBEX8="
+                        alt="Industry mentors visit" class="w-full h-full object-cover min-h-[220px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                         <p class="text-sm font-semibold">Industry Mentors Visit</p>
@@ -357,8 +405,11 @@
                 </div>
 
                 <!-- Campus Tour -->
-                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer" tabindex="0" data-gallery-images="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=">
-                    <img src="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=" alt="Campus tour" class="w-full h-full object-cover min-h-[220px]">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg reveal-on-scroll gallery-tile cursor-pointer"
+                    tabindex="0"
+                    data-gallery-images="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps=">
+                    <img src="https://media.istockphoto.com/id/1047620596/photo/portrait-of-high-school-student-group-wearing-uniform-standing-outside-school-buildings.jpg?s=612x612&w=0&k=20&c=DNi5E3zpfF1l_JysQkDXcqR5qJOEST2wWjQBCXf0gps="
+                        alt="Campus tour" class="w-full h-full object-cover min-h-[220px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                         <p class="text-sm font-semibold">Campus Tour</p>
@@ -430,7 +481,8 @@
                     </div>
                     <h4 class="text-xl font-bold text-stone-900 mb-3">Cambridge Curriculum</h4>
                     <p class="text-stone-600 mb-6 line-clamp-3">
-                        We follow the prestigious Cambridge International curriculum, recognized worldwide for its academic rigor and comprehensive approach to education.
+                        We follow the prestigious Cambridge International curriculum, recognized worldwide for its
+                        academic rigor and comprehensive approach to education.
                     </p>
                     <a href="#"
                         class="text-brand-900 font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
@@ -520,10 +572,12 @@
                     <h3 class="text-4xl font-bold text-stone-900 mb-6">Welcome from the Administration</h3>
                     <div class="prose prose-lg text-stone-600 mb-8">
                         <p class="mb-4">
-                            "Welcome to Panama School, where excellence meets opportunity. Our institution has been a cornerstone of academic achievement and character development in Gweru for generations."
+                            "Welcome to Panama School, where excellence meets opportunity. Our institution has been a
+                            cornerstone of academic achievement and character development in Gweru for generations."
                         </p>
                         <p>
-                            "At Panama School, we combine rigorous academic standards with a supportive community environment, preparing students to become confident, compassionate leaders of tomorrow."
+                            "At Panama School, we combine rigorous academic standards with a supportive community
+                            environment, preparing students to become confident, compassionate leaders of tomorrow."
                         </p>
                     </div>
                     <div class="flex items-center gap-4">
@@ -545,16 +599,27 @@
                 <!-- Copy -->
                 <div class="reveal-on-scroll">
                     <h2 class="text-amber-600 font-bold tracking-wide uppercase text-sm mb-3">Flexible Learning</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Learn from the best, on your schedule.</h3>
-                    <p class="text-stone-600 text-lg leading-relaxed mb-8">Access curated courses, expert teachers, and structured support designed for both on-campus and online learners. Progress at your pace while staying connected to our academic mentors.</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Learn from the best, on your
+                        schedule.</h3>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-8">Access curated courses, expert teachers, and
+                        structured support designed for both on-campus and online learners. Progress at your pace while
+                        staying connected to our academic mentors.</p>
                     <div class="flex flex-col sm:flex-row gap-3 mb-8">
-                        <a href="#academics" class="px-7 py-3 bg-brand-900 text-white font-semibold rounded-lg shadow-lg hover:bg-brand-800 transition-colors">Explore Programs</a>
-                        <a href="#tours" class="px-7 py-3 border border-stone-300 text-stone-800 font-semibold rounded-lg hover:bg-stone-50 transition-colors">Schedule a Call</a>
+                        <a href="#academics"
+                            class="px-7 py-3 bg-brand-900 text-white font-semibold rounded-lg shadow-lg hover:bg-brand-800 transition-colors">Explore
+                            Programs</a>
+                        <a href="#tours"
+                            class="px-7 py-3 border border-stone-300 text-stone-800 font-semibold rounded-lg hover:bg-stone-50 transition-colors">Schedule
+                            a Call</a>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-sm text-stone-700">
                         <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
                             </div>
                             <div>
                                 <p class="font-semibold text-stone-900">Live & on-demand</p>
@@ -562,8 +627,12 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM6 22v-2a4 4 0 014-4h0a4 4 0 014 4v2M4 8v5m16-5v5" /></svg>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM6 22v-2a4 4 0 014-4h0a4 4 0 014 4v2M4 8v5m16-5v5" />
+                                </svg>
                             </div>
                             <div>
                                 <p class="font-semibold text-stone-900">Small cohorts</p>
@@ -571,8 +640,12 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM7 22v-2a5 5 0 015-5h0a5 5 0 015 5v2M5 10l-2 2 2 2m14-4l2 2-2 2" /></svg>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM7 22v-2a5 5 0 015-5h0a5 5 0 015 5v2M5 10l-2 2 2 2m14-4l2 2-2 2" />
+                                </svg>
                             </div>
                             <div>
                                 <p class="font-semibold text-stone-900">Mentor access</p>
@@ -580,8 +653,12 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m2 0h1a2 2 0 100-4h-1V5h-2v3H9v2h1v4H9v2h6v-2z" /></svg>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m2 0h1a2 2 0 100-4h-1V5h-2v3H9v2h1v4H9v2h6v-2z" />
+                                </svg>
                             </div>
                             <div>
                                 <p class="font-semibold text-stone-900">Scholarships</p>
@@ -593,15 +670,20 @@
 
                 <!-- Overlapping Imagery -->
                 <div class="reveal-on-scroll" style="transition-delay: 120ms;">
-                    <div class="relative max-w-xl mx-auto lg:mx-0">
-                        <!-- Right photo card (bigger, positioned to the right) -->
-                        <div class="absolute right-0 sm:right-6 bottom-0 sm:bottom-6 w-52 sm:w-64 md:w-72 rounded-2xl overflow-hidden shadow-xl border border-stone-200 bg-white transform translate-y-2">
-                            <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80" alt="Collaborative learning" class="w-full h-full object-cover">
+                    <div class="relative max-w-xl mx-auto lg:mx-0 p-4">
+                        <!-- Background/Bottom Image (Even Larger, Color) -->
+                        <div
+                            class="absolute right-0 bottom-0 w-11/12 h-96 rounded-2xl overflow-hidden shadow-lg border border-stone-200 bg-stone-100 transform translate-y-4 translate-x-4">
+                            <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80"
+                                alt="Collaborative learning"
+                                class="w-full h-full object-cover opacity-90 transition-all duration-700">
                         </div>
 
-                        <!-- Left photo card (smaller, overlapping over the right card in the middle-left) -->
-                        <div class="relative z-10 w-44 sm:w-56 md:w-60 rounded-2xl overflow-hidden shadow-2xl border border-stone-100 bg-white transform -translate-x-12 -translate-y-8 sm:-translate-x-16 sm:-translate-y-10">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Student studying" class="w-full h-full object-cover">
+                        <!-- Foreground/Top Image (Smaller relative to background) -->
+                        <div
+                            class="relative z-10 w-3/5 h-60 rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform -translate-y-8 -translate-x-4 hover:scale-105 transition-transform duration-500">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
+                                alt="Student studying" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -626,15 +708,18 @@
                         <!-- Slide 1 -->
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-brand-900 relative group">
-                                <div class="absolute -top-4 left-8 w-8 h-8 bg-brand-900 flex items-center justify-center rounded-full text-white shadow-lg">
+                                <div
+                                    class="absolute -top-4 left-8 w-8 h-8 bg-brand-900 flex items-center justify-center rounded-full text-white shadow-lg">
                                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                         <path
                                             d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
                                     </svg>
                                 </div>
 
-                                <p class="text-stone-700 mb-6 italic leading-relaxed">"Sending our son to Panama School was the best
-                                    decision we've made. The balance between academics and character growth is unmatched."</p>
+                                <p class="text-stone-700 mb-6 italic leading-relaxed">"Sending our son to Panama School
+                                    was the best
+                                    decision we've made. The balance between academics and character growth is
+                                    unmatched."</p>
 
                                 <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
                                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
@@ -650,14 +735,16 @@
                         <!-- Slide 2 -->
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-amber-600 relative group">
-                                <div class="absolute -top-4 left-8 w-8 h-8 bg-amber-600 flex items-center justify-center rounded-full text-white shadow-lg">
+                                <div
+                                    class="absolute -top-4 left-8 w-8 h-8 bg-amber-600 flex items-center justify-center rounded-full text-white shadow-lg">
                                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                         <path
                                             d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
                                     </svg>
                                 </div>
 
-                                <p class="text-stone-700 mb-6 italic leading-relaxed">"The leadership opportunities here gave me the
+                                <p class="text-stone-700 mb-6 italic leading-relaxed">"The leadership opportunities here
+                                    gave me the
                                     confidence to apply to Ivy League universities. I owe so much to my teachers."</p>
 
                                 <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
@@ -665,7 +752,8 @@
                                         alt="Alumni" class="w-12 h-12 rounded-full object-cover ring-4 ring-white">
                                     <div>
                                         <p class="font-bold text-stone-900 text-sm">David Chen</p>
-                                        <p class="text-stone-600 text-xs uppercase tracking-wide">Alumni, Class of '20</p>
+                                        <p class="text-stone-600 text-xs uppercase tracking-wide">Alumni, Class of '20
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -674,15 +762,18 @@
                         <!-- Slide 3 -->
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-brand-900 relative group">
-                                <div class="absolute -top-4 left-8 w-8 h-8 bg-brand-900 flex items-center justify-center rounded-full text-white shadow-lg">
+                                <div
+                                    class="absolute -top-4 left-8 w-8 h-8 bg-brand-900 flex items-center justify-center rounded-full text-white shadow-lg">
                                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                         <path
                                             d="M14.017 21L14.017 18C14.017 16.0547 15.1924 14.6609 16.9189 13.9188C17.653 13.6025 18.2583 13.0645 18.7303 12.5939C16.9638 12.3929 16.143 11.42 16.0353 10.3708C15.823 8.30313 17.502 6.51688 19.5799 6.51688C21.0366 6.51688 22.25 7.64648 22.25 9.07188C22.25 13.0039 19.3496 17.1534 16.2736 19.7891C15.5898 20.375 14.6738 20.9125 14.017 21ZM4.0166 21L4.0166 18C4.0166 16.0547 5.19238 14.6609 6.91894 13.9188C7.65298 13.6025 8.25816 13.0645 8.73031 12.5939C6.96381 12.3929 6.14297 11.42 6.03531 10.3708C5.82297 8.30313 7.50195 6.51688 9.57988 6.51688C11.0366 6.51688 12.25 7.64648 12.25 9.07188C12.25 13.0039 9.34961 17.1534 6.27363 19.7891C5.58984 20.375 4.67383 20.9125 4.0166 21Z" />
                                     </svg>
                                 </div>
 
-                                <p class="text-stone-700 mb-6 italic leading-relaxed">"The sports facilities are incredible. Being
-                                    captain of the rugby team taught me more about leadership than any lecture could."</p>
+                                <p class="text-stone-700 mb-6 italic leading-relaxed">"The sports facilities are
+                                    incredible. Being
+                                    captain of the rugby team taught me more about leadership than any lecture could."
+                                </p>
 
                                 <div class="flex items-center gap-4 pt-6 border-t border-stone-200">
                                     <img src="https://images.unsplash.com/photo-1545696968-1a5245650b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
@@ -699,9 +790,12 @@
 
                 <!-- Carousel Dots -->
                 <div class="flex justify-center mt-8 space-x-2">
-                    <button class="carousel-dot w-3 h-3 rounded-full bg-amber-600 transition-all duration-300" data-slide="0"></button>
-                    <button class="carousel-dot w-3 h-3 rounded-full bg-stone-600 transition-all duration-300" data-slide="1"></button>
-                    <button class="carousel-dot w-3 h-3 rounded-full bg-stone-600 transition-all duration-300" data-slide="2"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-amber-600 transition-all duration-300"
+                        data-slide="0"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-stone-600 transition-all duration-300"
+                        data-slide="1"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-stone-600 transition-all duration-300"
+                        data-slide="2"></button>
                 </div>
             </div>
         </div>
@@ -718,114 +812,159 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Gallery Item 1 - Campus -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-brand-50 to-stone-100 border-2 border-transparent group-hover:border-brand-500">
-                    <div class="absolute inset-0 bg-brand-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div
+                    class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-brand-50 to-stone-100 border-2 border-transparent group-hover:border-brand-500">
+                    <div
+                        class="absolute inset-0 bg-brand-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Campus Icon -->
-                        <div class="w-20 h-20 bg-brand-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-700 transition-colors shadow-lg group-hover:shadow-xl">
+                        <div
+                            class="w-20 h-20 bg-brand-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-700 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                         </div>
-                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Our Campus</h4>
+                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Our
+                            Campus</h4>
                         <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
-                            25-acre campus with modern facilities, green spaces, and state-of-the-art buildings designed for optimal learning and growth.
+                            25-acre campus with modern facilities, green spaces, and state-of-the-art buildings designed
+                            for optimal learning and growth.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 2 - Classrooms -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-amber-50 to-stone-100 border-2 border-transparent group-hover:border-amber-500" style="transition-delay: 100ms;">
-                    <div class="absolute inset-0 bg-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-amber-50 to-stone-100 border-2 border-transparent group-hover:border-amber-500"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="absolute inset-0 bg-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Classroom Icon -->
-                        <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors shadow-lg group-hover:shadow-xl">
+                        <div
+                            class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
                         </div>
-                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Modern Classrooms</h4>
+                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">
+                            Modern Classrooms</h4>
                         <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
-                            Smart classrooms with interactive displays, comfortable seating, and technology-enabled learning environments.
+                            Smart classrooms with interactive displays, comfortable seating, and technology-enabled
+                            learning environments.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 3 - Science Labs -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-blue-50 to-stone-100 border-2 border-transparent group-hover:border-blue-500" style="transition-delay: 200ms;">
-                    <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-blue-50 to-stone-100 border-2 border-transparent group-hover:border-blue-500"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Science Lab Icon -->
-                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors shadow-lg group-hover:shadow-xl">
+                        <div
+                            class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                             </svg>
                         </div>
-                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Science Labs</h4>
+                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">
+                            Science Labs</h4>
                         <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
-                            Fully equipped laboratories for Physics, Chemistry, and Biology with advanced instruments for practical experiments.
+                            Fully equipped laboratories for Physics, Chemistry, and Biology with advanced instruments
+                            for practical experiments.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 4 - Sports Facilities -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-green-50 to-stone-100 border-2 border-transparent group-hover:border-green-500" style="transition-delay: 300ms;">
-                    <div class="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-green-50 to-stone-100 border-2 border-transparent group-hover:border-green-500"
+                    style="transition-delay: 300ms;">
+                    <div
+                        class="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Sports Icon -->
-                        <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors shadow-lg group-hover:shadow-xl">
+                        <div
+                            class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>
-                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Sports Facilities</h4>
+                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">
+                            Sports Facilities</h4>
                         <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
-                            Olympic-sized swimming pool, football field, basketball courts, tennis courts, and indoor sports complex.
+                            Olympic-sized swimming pool, football field, basketball courts, tennis courts, and indoor
+                            sports complex.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 5 - Library -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-purple-50 to-stone-100 border-2 border-transparent group-hover:border-purple-500" style="transition-delay: 400ms;">
-                    <div class="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-purple-50 to-stone-100 border-2 border-transparent group-hover:border-purple-500"
+                    style="transition-delay: 400ms;">
+                    <div
+                        class="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Library Icon -->
-                        <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-500 transition-colors shadow-lg group-hover:shadow-xl">
+                        <div
+                            class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V5z" />
                             </svg>
                         </div>
-                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Library & Resources</h4>
+                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">
+                            Library & Resources</h4>
                         <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
-                            10,000+ books, digital resources, study zones, and research facilities with 24/7 access for students.
+                            10,000+ books, digital resources, study zones, and research facilities with 24/7 access for
+                            students.
                         </p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 6 - Student Activities -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-pink-50 to-stone-100 border-2 border-transparent group-hover:border-pink-500" style="transition-delay: 500ms;">
-                    <div class="absolute inset-0 bg-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 reveal-on-scroll bg-gradient-to-br from-pink-50 to-stone-100 border-2 border-transparent group-hover:border-pink-500"
+                    style="transition-delay: 500ms;">
+                    <div
+                        class="absolute inset-0 bg-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
                     <div class="relative h-64 flex flex-col items-center justify-center p-8 text-center">
                         <!-- Activities Icon -->
-                        <div class="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-pink-500 transition-colors shadow-lg group-hover:shadow-xl">
+                        <div
+                            class="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-pink-500 transition-colors shadow-lg group-hover:shadow-xl">
                             <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0l1 16h8l1-16M10 9v6m4-6v6" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0l1 16h8l1-16M10 9v6m4-6v6" />
                             </svg>
                         </div>
-                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">Student Activities</h4>
+                        <h4 class="text-stone-900 font-bold text-xl mb-2 group-hover:text-white transition-colors">
+                            Student Activities</h4>
                         <p class="text-stone-600 text-sm leading-relaxed group-hover:text-white transition-colors">
-                            25+ clubs, arts programs, music bands, drama society, and student government for holistic development.
+                            25+ clubs, arts programs, music bands, drama society, and student government for holistic
+                            development.
                         </p>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-12 reveal-on-scroll" style="transition-delay: 600ms;">
-                <a href="#" class="inline-flex items-center gap-2 px-8 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-900/20">
+                <a href="#"
+                    class="inline-flex items-center gap-2 px-8 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-900/20">
                     View Full Gallery
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </a>
             </div>
@@ -847,26 +986,33 @@
                     <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200">
                         <div class="w-16 h-16 bg-brand-900 rounded-xl flex items-center justify-center mb-6">
                             <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
                         </div>
                         <h4 class="text-2xl font-bold text-stone-900 mb-4">Cambridge Curriculum</h4>
                         <p class="text-stone-600 leading-relaxed mb-6">
-                            We follow the prestigious Cambridge International curriculum, recognized worldwide for its academic rigor and comprehensive approach to education. Our curriculum is designed to develop critical thinking, creativity, and problem-solving skills.
+                            We follow the prestigious Cambridge International curriculum, recognized worldwide for its
+                            academic rigor and comprehensive approach to education. Our curriculum is designed to
+                            develop critical thinking, creativity, and problem-solving skills.
                         </p>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
                                 <span class="text-sm font-medium text-stone-700">Internationally Recognized</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
                                 <span class="text-sm font-medium text-stone-700">University Preparation</span>
@@ -877,19 +1023,23 @@
 
                 <!-- Right Column - Key Stats -->
                 <div class="grid grid-cols-2 gap-6 reveal-on-scroll" style="transition-delay: 200ms;">
-                    <div class="bg-gradient-to-br from-brand-900 to-brand-800 p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
+                    <div
+                        class="bg-gradient-to-br from-brand-900 to-brand-800 p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
                         <div class="text-3xl font-bold mb-2">98%</div>
                         <div class="text-sm opacity-90">Pass Rate</div>
                     </div>
-                    <div class="bg-gradient-to-br from-amber-600 to-amber-500 p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
+                    <div
+                        class="bg-gradient-to-br from-amber-600 to-amber-500 p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
                         <div class="text-3xl font-bold mb-2">25+</div>
                         <div class="text-sm opacity-90">Subject Choices</div>
                     </div>
-                    <div class="bg-gradient-to-br from-blue-600 to-blue-500 p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
+                    <div
+                        class="bg-gradient-to-br from-blue-600 to-blue-500 p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
                         <div class="text-3xl font-bold mb-2">15:1</div>
                         <div class="text-sm opacity-90">Student-Teacher Ratio</div>
                     </div>
-                    <div class="bg-gradient-to-br from-green-600 to-green-500 p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
+                    <div
+                        class="bg-gradient-to-br from-green-600 to-green-500 p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
                         <div class="text-3xl font-bold mb-2">100%</div>
                         <div class="text-sm opacity-90">University Placement</div>
                     </div>
@@ -899,35 +1049,46 @@
             <!-- Program Levels -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-on-scroll" style="transition-delay: 400ms;">
                 <!-- Primary Program -->
-                <div class="group bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:border-brand-300 transition-all duration-300">
-                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-200 transition-colors">
+                <div
+                    class="group bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:border-brand-300 transition-all duration-300">
+                    <div
+                        class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-200 transition-colors">
                         <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                     </div>
                     <h4 class="text-xl font-bold text-stone-900 mb-4">Primary Program (Ages 5-11)</h4>
                     <ul class="space-y-3 text-stone-600">
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Cambridge Primary Curriculum</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>English, Mathematics, Science</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Art, Music, Physical Education</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Project-Based Learning</span>
                         </li>
@@ -935,35 +1096,46 @@
                 </div>
 
                 <!-- Secondary Program -->
-                <div class="group bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:border-amber-300 transition-all duration-300">
-                    <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-200 transition-colors">
+                <div
+                    class="group bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:border-amber-300 transition-all duration-300">
+                    <div
+                        class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-200 transition-colors">
                         <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                     </div>
                     <h4 class="text-xl font-bold text-stone-900 mb-4">Secondary Program (Ages 11-16)</h4>
                     <ul class="space-y-3 text-stone-600">
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Cambridge Lower Secondary</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Core Subjects + Electives</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Languages, Humanities, STEM</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Career Guidance & Counseling</span>
                         </li>
@@ -971,35 +1143,46 @@
                 </div>
 
                 <!-- Advanced Program -->
-                <div class="group bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:border-blue-300 transition-all duration-300">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
+                <div
+                    class="group bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:border-blue-300 transition-all duration-300">
+                    <div
+                        class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
                         <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                     </div>
                     <h4 class="text-xl font-bold text-stone-900 mb-4">Advanced Program (Ages 16-18)</h4>
                     <ul class="space-y-3 text-stone-600">
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Cambridge International AS/A Levels</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>University-Level Courses</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Research & Independent Study</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Leadership & Community Service</span>
                         </li>
@@ -1009,10 +1192,12 @@
 
             <!-- Call to Action -->
             <div class="text-center mt-16 reveal-on-scroll" style="transition-delay: 600ms;">
-                <a href="#" class="inline-flex items-center gap-2 px-8 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-900/20">
+                <a href="#"
+                    class="inline-flex items-center gap-2 px-8 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-900/20">
                     View Complete Curriculum Guide
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </a>
             </div>
@@ -1025,9 +1210,11 @@
             <!-- Header -->
             <div class="text-center mb-16 reveal-on-scroll">
                 <h2 class="text-brand-900 font-bold tracking-wide uppercase text-sm mb-3">Admissions</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Admissions Process — Step-by-step guide for prospective families</h3>
+                <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Admissions Process — Step-by-step guide
+                    for prospective families</h3>
                 <p class="text-stone-600 text-lg leading-relaxed max-w-3xl mx-auto">
-                    Follow this simple pathway to join the Panama School community. Our team is here to support you at every step.
+                    Follow this simple pathway to join the Panama School community. Our team is here to support you at
+                    every step.
                 </p>
             </div>
 
@@ -1035,73 +1222,120 @@
             <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- Step 1 -->
                 <li class="reveal-on-scroll">
-                    <div class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center font-bold shadow-md">1</div>
-                        <div class="w-12 h-12 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <div
+                        class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
+                        <div
+                            class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center font-bold shadow-md">
+                            1</div>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900 mb-2">Inquiry & Campus Tour</h4>
-                        <p class="text-stone-600">Submit an inquiry and book a campus or virtual tour to explore our classrooms, labs, and facilities.</p>
+                        <p class="text-stone-600">Submit an inquiry and book a campus or virtual tour to explore our
+                            classrooms, labs, and facilities.</p>
                     </div>
                 </li>
 
                 <!-- Step 2 -->
                 <li class="reveal-on-scroll" style="transition-delay: 60ms;">
-                    <div class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold shadow-md">2</div>
-                        <div class="w-12 h-12 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m4-4H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <div
+                        class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
+                        <div
+                            class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold shadow-md">
+                            2</div>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v8m4-4H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900 mb-2">Submit Application</h4>
-                        <p class="text-stone-600">Complete the online form and upload required documents. Applications are reviewed on a rolling basis.</p>
+                        <p class="text-stone-600">Complete the online form and upload required documents. Applications
+                            are reviewed on a rolling basis.</p>
                     </div>
                 </li>
 
                 <!-- Step 3 -->
                 <li class="reveal-on-scroll" style="transition-delay: 120ms;">
-                    <div class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center font-bold shadow-md">3</div>
-                        <div class="w-12 h-12 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg>
+                    <div
+                        class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
+                        <div
+                            class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center font-bold shadow-md">
+                            3</div>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900 mb-2">Entrance Assessment</h4>
-                        <p class="text-stone-600">Age-appropriate assessments help us understand readiness and ensure appropriate placement.</p>
+                        <p class="text-stone-600">Age-appropriate assessments help us understand readiness and ensure
+                            appropriate placement.</p>
                     </div>
                 </li>
 
                 <!-- Step 4 -->
                 <li class="reveal-on-scroll" style="transition-delay: 180ms;">
-                    <div class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold shadow-md">4</div>
-                        <div class="w-12 h-12 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                    <div
+                        class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
+                        <div
+                            class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold shadow-md">
+                            4</div>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900 mb-2">Family Interview</h4>
-                        <p class="text-stone-600">Meet with our admissions team to discuss your child’s goals and answer any questions.</p>
+                        <p class="text-stone-600">Meet with our admissions team to discuss your child’s goals and answer
+                            any questions.</p>
                     </div>
                 </li>
 
                 <!-- Step 5 -->
                 <li class="reveal-on-scroll" style="transition-delay: 240ms;">
-                    <div class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center font-bold shadow-md">5</div>
-                        <div class="w-12 h-12 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <div
+                        class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
+                        <div
+                            class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center font-bold shadow-md">
+                            5</div>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-brand-900/10 text-brand-900 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900 mb-2">Decision & Offer</h4>
-                        <p class="text-stone-600">Admissions decisions are communicated by email. Accepted families receive an offer package.</p>
+                        <p class="text-stone-600">Admissions decisions are communicated by email. Accepted families
+                            receive an offer package.</p>
                     </div>
                 </li>
 
                 <!-- Step 6 -->
                 <li class="reveal-on-scroll" style="transition-delay: 300ms;">
-                    <div class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold shadow-md">6</div>
-                        <div class="w-12 h-12 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m4-4H8"/></svg>
+                    <div
+                        class="h-full bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow relative">
+                        <div
+                            class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold shadow-md">
+                            6</div>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-amber-600/10 text-amber-600 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v8m4-4H8" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900 mb-2">Enrollment & Orientation</h4>
-                        <p class="text-stone-600">Confirm your place, submit fees, and attend orientation to begin your journey with us.</p>
+                        <p class="text-stone-600">Confirm your place, submit fees, and attend orientation to begin your
+                            journey with us.</p>
                     </div>
                 </li>
             </ol>
@@ -1113,45 +1347,80 @@
                     <div class="bg-white border border-stone-200 rounded-2xl p-8 reveal-on-scroll">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-10 h-10 rounded-lg bg-brand-900 text-white flex items-center justify-center">
-                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
                             </div>
                             <h4 class="text-xl font-bold text-stone-900">Application Requirements</h4>
                         </div>
                         <ul class="grid sm:grid-cols-2 gap-4 text-stone-700">
                             <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
                                 Completed online application form
                             </li>
                             <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
                                 Previous school reports (last 2 years)
                             </li>
                             <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
                                 Copy of birth certificate / passport
                             </li>
                             <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
                                 Immunization record
                             </li>
                             <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
                                 Recommendation letter (optional)
                             </li>
                             <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="w-5 h-5 text-brand-900 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
                                 Application fee payment proof
                             </li>
                         </ul>
 
                         <div class="mt-8 flex flex-col sm:flex-row gap-3">
-                            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-colors shadow">
+                            <a href="#"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-colors shadow">
                                 Apply Online
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
                             </a>
-                            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-stone-300 text-stone-700 font-semibold rounded-lg hover:bg-stone-50 transition-colors">
+                            <a href="#"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-stone-300 text-stone-700 font-semibold rounded-lg hover:bg-stone-50 transition-colors">
                                 Download Checklist (PDF)
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"/></svg>
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -1159,35 +1428,49 @@
 
                 <!-- FAQs -->
                 <div>
-                    <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll" style="transition-delay: 120ms;">
+                    <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll"
+                        style="transition-delay: 120ms;">
                         <h4 class="text-lg font-bold text-stone-900 mb-4">Frequently Asked Questions</h4>
                         <div class="space-y-3">
                             <details class="group border border-stone-200 rounded-lg p-4">
-                                <summary class="flex justify-between items-center cursor-pointer font-medium text-stone-800">
+                                <summary
+                                    class="flex justify-between items-center cursor-pointer font-medium text-stone-800">
                                     When should we apply?
-                                    <span class="ml-3 text-stone-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                                    <span
+                                        class="ml-3 text-stone-400 group-open:rotate-180 transition-transform">&#9660;</span>
                                 </summary>
-                                <p class="mt-3 text-sm text-stone-600">We encourage applications at least 6–9 months prior to the desired start date. Limited mid-year places may be available.</p>
+                                <p class="mt-3 text-sm text-stone-600">We encourage applications at least 6–9 months
+                                    prior to the desired start date. Limited mid-year places may be available.</p>
                             </details>
                             <details class="group border border-stone-200 rounded-lg p-4">
-                                <summary class="flex justify-between items-center cursor-pointer font-medium text-stone-800">
+                                <summary
+                                    class="flex justify-between items-center cursor-pointer font-medium text-stone-800">
                                     Are scholarships available?
-                                    <span class="ml-3 text-stone-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                                    <span
+                                        class="ml-3 text-stone-400 group-open:rotate-180 transition-transform">&#9660;</span>
                                 </summary>
-                                <p class="mt-3 text-sm text-stone-600">Yes. Merit- and need-based scholarships are offered. Visit the Admissions > Fees & Scholarships page for details.</p>
+                                <p class="mt-3 text-sm text-stone-600">Yes. Merit- and need-based scholarships are
+                                    offered. Visit the Admissions > Fees & Scholarships page for details.</p>
                             </details>
                             <details class="group border border-stone-200 rounded-lg p-4">
-                                <summary class="flex justify-between items-center cursor-pointer font-medium text-stone-800">
+                                <summary
+                                    class="flex justify-between items-center cursor-pointer font-medium text-stone-800">
                                     Is there a waiting list?
-                                    <span class="ml-3 text-stone-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                                    <span
+                                        class="ml-3 text-stone-400 group-open:rotate-180 transition-transform">&#9660;</span>
                                 </summary>
-                                <p class="mt-3 text-sm text-stone-600">If a grade is full, qualified applicants may be placed on a waitlist and contacted as places become available.</p>
+                                <p class="mt-3 text-sm text-stone-600">If a grade is full, qualified applicants may be
+                                    placed on a waitlist and contacted as places become available.</p>
                             </details>
                         </div>
                         <div class="mt-6">
-                            <a href="#" class="inline-flex items-center gap-2 text-brand-900 font-semibold hover:gap-3 transition-all">
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-brand-900 font-semibold hover:gap-3 transition-all">
                                 View all Admissions FAQs
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -1202,8 +1485,10 @@
             <!-- Header -->
             <div class="text-center mb-14 reveal-on-scroll">
                 <h2 class="text-brand-900 font-bold tracking-wide uppercase text-sm mb-3">Student Life</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Extracurricular Activities, Sports, and Clubs</h3>
-                <p class="text-stone-600 max-w-3xl mx-auto">Beyond the classroom, students explore passions, build leadership, and form lifelong friendships through a vibrant co-curricular program.</p>
+                <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Extracurricular Activities, Sports, and
+                    Clubs</h3>
+                <p class="text-stone-600 max-w-3xl mx-auto">Beyond the classroom, students explore passions, build
+                    leadership, and form lifelong friendships through a vibrant co-curricular program.</p>
             </div>
 
             <!-- Highlights -->
@@ -1211,28 +1496,40 @@
                 <div class="reveal-on-scroll">
                     <div class="h-full bg-stone-50 border border-stone-200 rounded-2xl p-6">
                         <div class="w-12 h-12 rounded-lg bg-brand-900 text-white flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
                         </div>
                         <h4 class="text-lg font-bold text-stone-900 mb-2">Athletics & Fitness</h4>
-                        <p class="text-stone-600">Competitive and recreational programs for all levels focusing on skill, teamwork, and well-being.</p>
+                        <p class="text-stone-600">Competitive and recreational programs for all levels focusing on
+                            skill, teamwork, and well-being.</p>
                     </div>
                 </div>
                 <div class="reveal-on-scroll" style="transition-delay: 80ms;">
                     <div class="h-full bg-stone-50 border border-stone-200 rounded-2xl p-6">
                         <div class="w-12 h-12 rounded-lg bg-amber-600 text-white flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7 20h10"/></svg>
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7 20h10" />
+                            </svg>
                         </div>
                         <h4 class="text-lg font-bold text-stone-900 mb-2">Clubs & Societies</h4>
-                        <p class="text-stone-600">Academic, service, and special interest clubs that develop leadership and collaboration.</p>
+                        <p class="text-stone-600">Academic, service, and special interest clubs that develop leadership
+                            and collaboration.</p>
                     </div>
                 </div>
                 <div class="reveal-on-scroll" style="transition-delay: 160ms;">
                     <div class="h-full bg-stone-50 border border-stone-200 rounded-2xl p-6">
                         <div class="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-2v13M3 10h6M3 15h6"/></svg>
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19V6l12-2v13M3 10h6M3 15h6" />
+                            </svg>
                         </div>
                         <h4 class="text-lg font-bold text-stone-900 mb-2">Arts & Performance</h4>
-                        <p class="text-stone-600">Music, drama, and visual arts programs with showcases, concerts, and exhibitions year-round.</p>
+                        <p class="text-stone-600">Music, drama, and visual arts programs with showcases, concerts, and
+                            exhibitions year-round.</p>
                     </div>
                 </div>
             </div>
@@ -1243,61 +1540,148 @@
                 <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900">Sports Programs</h4>
                     </div>
                     <ul class="space-y-2 text-stone-700">
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Football, Rugby, Basketball</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Tennis, Volleyball, Athletics</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Swimming, Badminton, Table Tennis</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CrossFit & Fitness Club</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Football, Rugby, Basketball</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Tennis, Volleyball, Athletics</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Swimming, Badminton, Table Tennis</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> CrossFit & Fitness Club</li>
                     </ul>
-                    <div class="mt-5"><a href="#" class="inline-flex items-center gap-2 text-green-700 font-semibold hover:gap-3 transition-all">View Sports Schedule <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a></div>
+                    <div class="mt-5"><a href="#"
+                            class="inline-flex items-center gap-2 text-green-700 font-semibold hover:gap-3 transition-all">View
+                            Sports Schedule <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg></a></div>
                 </div>
 
                 <!-- Clubs Card -->
-                <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll" style="transition-delay: 100ms;">
+                <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll"
+                    style="transition-delay: 100ms;">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-10 h-10 rounded-lg bg-amber-600 text-white flex items-center justify-center">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7 20h10"/></svg>
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7 20h10" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900">Clubs & Societies</h4>
                     </div>
                     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-stone-700">
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Debate & Public Speaking</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Robotics & Coding</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Environmental Club</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Model UN</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Entrepreneurship Club</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Community Service</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Debate & Public Speaking</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Robotics & Coding</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Environmental Club</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Model UN</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Entrepreneurship Club</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Community Service</li>
                     </ul>
-                    <div class="mt-5"><a href="#" class="inline-flex items-center gap-2 text-amber-700 font-semibold hover:gap-3 transition-all">Explore All Clubs <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a></div>
+                    <div class="mt-5"><a href="#"
+                            class="inline-flex items-center gap-2 text-amber-700 font-semibold hover:gap-3 transition-all">Explore
+                            All Clubs <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg></a></div>
                 </div>
 
                 <!-- Arts Card -->
-                <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll" style="transition-delay: 200ms;">
+                <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll"
+                    style="transition-delay: 200ms;">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-2v13M3 10h6M3 15h6"/></svg>
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19V6l12-2v13M3 10h6M3 15h6" />
+                            </svg>
                         </div>
                         <h4 class="text-xl font-bold text-stone-900">Arts & Culture</h4>
                     </div>
                     <ul class="space-y-2 text-stone-700">
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Choir, Orchestra, Jazz Band</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Drama & Theatre Productions</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Visual Arts & Photography</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Cultural Day & Showcases</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Choir, Orchestra, Jazz Band</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Drama & Theatre Productions</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Visual Arts & Photography</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg> Cultural Day & Showcases</li>
                     </ul>
-                    <div class="mt-5"><a href="#" class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:gap-3 transition-all">See Upcoming Performances <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a></div>
+                    <div class="mt-5"><a href="#"
+                            class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:gap-3 transition-all">See
+                            Upcoming Performances <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg></a></div>
                 </div>
             </div>
 
             <!-- CTA -->
             <div class="text-center mt-12 reveal-on-scroll">
-                <a href="#" class="inline-flex items-center gap-2 px-8 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-900/20">
+                <a href="#"
+                    class="inline-flex items-center gap-2 px-8 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-900/20">
                     Join a Club or Team
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -1394,30 +1778,46 @@
             <div class="text-center mb-14 reveal-on-scroll">
                 <h2 class="text-brand-900 font-bold tracking-wide uppercase text-sm mb-3">Contact</h2>
                 <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Contact Information & Location</h3>
-                <p class="text-stone-600 max-w-3xl mx-auto">Reach out to our team or plan your visit to our campus in Marondera, Zimbabwe. We are happy to help with admissions, tours, and general inquiries.</p>
+                <p class="text-stone-600 max-w-3xl mx-auto">Reach out to our team or plan your visit to our campus in
+                    Marondera, Zimbabwe. We are happy to help with admissions, tours, and general inquiries.</p>
             </div>
 
             <!-- Quick Contact Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll">
                     <div class="w-12 h-12 rounded-lg bg-brand-900 text-white flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
                     </div>
                     <h4 class="text-lg font-bold text-stone-900 mb-2">Phone</h4>
-                    <p class="text-stone-700">Front Office: <a href="tel:+263123456789" class="text-brand-900 font-medium hover:underline">+263 12 345 6789</a></p>
-                    <p class="text-stone-700">Admissions: <a href="tel:+263123456780" class="text-brand-900 font-medium hover:underline">+263 12 345 6780</a></p>
+                    <p class="text-stone-700">Front Office: <a href="tel:+263123456789"
+                            class="text-brand-900 font-medium hover:underline">+263 12 345 6789</a></p>
+                    <p class="text-stone-700">Admissions: <a href="tel:+263123456780"
+                            class="text-brand-900 font-medium hover:underline">+263 12 345 6780</a></p>
                 </div>
-                <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll" style="transition-delay: 80ms;">
+                <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll"
+                    style="transition-delay: 80ms;">
                     <div class="w-12 h-12 rounded-lg bg-amber-600 text-white flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
                     </div>
                     <h4 class="text-lg font-bold text-stone-900 mb-2">Email</h4>
-                    <p class="text-stone-700">General: <a href="mailto:info@panamaschool.zw" class="text-brand-900 font-medium hover:underline">info@panamaschool.zw</a></p>
-                    <p class="text-stone-700">Admissions: <a href="mailto:admissions@panamaschool.zw" class="text-brand-900 font-medium hover:underline">admissions@panamaschool.zw</a></p>
+                    <p class="text-stone-700">General: <a href="mailto:info@panamaschool.zw"
+                            class="text-brand-900 font-medium hover:underline">info@panamaschool.zw</a></p>
+                    <p class="text-stone-700">Admissions: <a href="mailto:admissions@panamaschool.zw"
+                            class="text-brand-900 font-medium hover:underline">admissions@panamaschool.zw</a></p>
                 </div>
-                <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll" style="transition-delay: 160ms;">
+                <div class="bg-white border border-stone-200 rounded-2xl p-6 reveal-on-scroll"
+                    style="transition-delay: 160ms;">
                     <div class="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
                     </div>
                     <h4 class="text-lg font-bold text-stone-900 mb-2">Office Hours</h4>
                     <ul class="text-stone-700 space-y-1">
@@ -1440,8 +1840,10 @@
                         <div>
                             <h5 class="font-semibold text-stone-900 mb-2">Admissions Office</h5>
                             <ul class="text-stone-700 space-y-1 text-sm">
-                                <li>Phone: <a href="tel:+263123456780" class="text-brand-900 hover:underline">+263 12 345 6780</a></li>
-                                <li>Email: <a href="mailto:admissions@panamaschool.zw" class="text-brand-900 hover:underline">admissions@panamaschool.zw</a></li>
+                                <li>Phone: <a href="tel:+263123456780" class="text-brand-900 hover:underline">+263 12
+                                        345 6780</a></li>
+                                <li>Email: <a href="mailto:admissions@panamaschool.zw"
+                                        class="text-brand-900 hover:underline">admissions@panamaschool.zw</a></li>
                             </ul>
                         </div>
                         <div>
@@ -1453,21 +1855,34 @@
                         </div>
                     </div>
                     <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Marondera%2C%20Zimbabwe" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-colors shadow">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Marondera%2C%20Zimbabwe"
+                            target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-colors shadow">
                             Get Directions
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
                         </a>
-                        <a href="mailto:info@panamaschool.zw" class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-stone-300 text-stone-700 font-semibold rounded-lg hover:bg-stone-50 transition-colors">
+                        <a href="mailto:info@panamaschool.zw"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-stone-300 text-stone-700 font-semibold rounded-lg hover:bg-stone-50 transition-colors">
                             Email Us
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg>
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8" />
+                            </svg>
                         </a>
                     </div>
                 </div>
 
                 <!-- Map -->
                 <div class="reveal-on-scroll" style="transition-delay: 120ms;">
-                    <div class="w-full h-80 md:h-full bg-stone-200 rounded-2xl overflow-hidden border border-stone-200 shadow-sm">
-                        <iframe title="Map to Panama School" src="https://www.google.com/maps?q=Gweru%2C%20Zimbabwe&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div
+                        class="w-full h-80 md:h-full bg-stone-200 rounded-2xl overflow-hidden border border-stone-200 shadow-sm">
+                        <iframe title="Map to Panama School"
+                            src="https://www.google.com/maps?q=Gweru%2C%20Zimbabwe&output=embed" width="100%"
+                            height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -1476,7 +1891,9 @@
 
     <!-- Call to Action -->
     <section class="py-32 bg-brand-900 relative overflow-hidden reveal-on-scroll parallax-section">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat opacity-40 parallax-bg"></div>
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat opacity-40 parallax-bg">
+        </div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Begin Your Journey Today</h2>
             <p class="text-brand-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
@@ -1502,16 +1919,21 @@
                 <!-- Brand + Contact -->
                 <div class="reveal-on-scroll">
                     <div class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 bg-brand-900 rounded-md flex items-center justify-center text-white font-bold shadow-md">A</div>
-                        <span class="font-bold text-xl text-white">Panama<span class="text-brand-700">School</span></span>
+                        <div
+                            class="w-8 h-8 bg-brand-900 rounded-md flex items-center justify-center text-white font-bold shadow-md">
+                            A</div>
+                        <span class="font-bold text-xl text-white">Panama<span
+                                class="text-brand-700">School</span></span>
                     </div>
                     <p class="text-stone-400 text-sm leading-relaxed mb-5">
                         Empowering students with knowledge, integrity, and the skills to succeed in a global society.
                     </p>
                     <div class="space-y-2 text-sm text-stone-300">
                         <p>123 Education Drive, Marondera, Zimbabwe</p>
-                        <p><a href="tel:+263123456789" class="hover:text-white transition-colors">+263 12 345 6789</a></p>
-                        <p><a href="mailto:info@panamaschool.zw" class="hover:text-white transition-colors">info@panamaschool.zw</a></p>
+                        <p><a href="tel:+263123456789" class="hover:text-white transition-colors">+263 12 345 6789</a>
+                        </p>
+                        <p><a href="mailto:info@panamaschool.zw"
+                                class="hover:text-white transition-colors">info@panamaschool.zw</a></p>
                     </div>
                     <div class="mt-6 h-0.5 w-24 bg-brand-700"></div>
                 </div>
@@ -1523,7 +1945,8 @@
                         <div class="mt-2 h-0.5 w-16 bg-brand-700"></div>
                     </div>
                     <ul class="space-y-3 text-stone-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Planning &amp; Administration</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Planning &amp; Administration</a>
+                        </li>
                         <li><a href="#" class="hover:text-white transition-colors">Campus Safety</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Office of the Chancellor</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Facility Services</a></li>
@@ -1563,27 +1986,32 @@
                 </div>
             </div>
 
-            <div class="border-t border-stone-800 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+            <div
+                class="border-t border-stone-800 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
                 <p class="text-stone-500">&copy; 2025 Panama School. All rights reserved.</p>
                 <div class="flex items-center gap-4 text-brand-700">
                     <a href="#" class="hover:text-white transition-colors" aria-label="Facebook">
                         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                         </svg>
                     </a>
                     <a href="#" class="hover:text-white transition-colors" aria-label="Twitter">
                         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                         </svg>
                     </a>
                     <a href="#" class="hover:text-white transition-colors" aria-label="LinkedIn">
                         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.25 8.25h4.5v13.5H.25V8.25zm7.5 0h4.31v1.85h.06c.6-1.13 2.07-2.32 4.26-2.32 4.56 0 5.4 3 5.4 6.9v7.07h-4.5v-6.27c0-1.5-.03-3.42-2.09-3.42-2.09 0-2.41 1.63-2.41 3.31v6.38h-4.5V8.25z" />
+                            <path
+                                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.25 8.25h4.5v13.5H.25V8.25zm7.5 0h4.31v1.85h.06c.6-1.13 2.07-2.32 4.26-2.32 4.56 0 5.4 3 5.4 6.9v7.07h-4.5v-6.27c0-1.5-.03-3.42-2.09-3.42-2.09 0-2.41 1.63-2.41 3.31v6.38h-4.5V8.25z" />
                         </svg>
                     </a>
                     <a href="#" class="hover:text-white transition-colors" aria-label="Instagram">
                         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2.25a1 1 0 110 2 1 1 0 010-2zm-4.5 1a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" />
+                            <path
+                                d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2.25a1 1 0 110 2 1 1 0 010-2zm-4.5 1a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" />
                         </svg>
                     </a>
                 </div>
@@ -1618,7 +2046,7 @@
             // Parallax Effect
             function handleParallax() {
                 const parallaxElements = document.querySelectorAll('.parallax-bg');
-                
+
                 parallaxElements.forEach(element => {
                     const scrolled = window.pageYOffset;
                     const rate = scrolled * -0.5; // Adjust this value for different parallax speed
@@ -1629,11 +2057,11 @@
             // Enhanced parallax for mobile devices
             function handleMobileParallax() {
                 const parallaxSections = document.querySelectorAll('.parallax-section');
-                
+
                 parallaxSections.forEach(section => {
                     const rect = section.getBoundingClientRect();
                     const speed = 0.3; // Slower speed for mobile
-                    
+
                     if (rect.top < window.innerHeight && rect.bottom > 0) {
                         const scrolled = window.pageYOffset;
                         const relativeY = rect.top + window.innerHeight / 2;
@@ -1646,7 +2074,7 @@
             // Throttle function for performance
             function throttle(func, limit) {
                 let inThrottle;
-                return function() {
+                return function () {
                     const args = arguments;
                     const context = this;
                     if (!inThrottle) {
@@ -1682,7 +2110,7 @@
 
             function updateCarousel() {
                 carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-                
+
                 // Update dots
                 dots.forEach((dot, index) => {
                     if (index === currentSlide) {
