@@ -24,9 +24,14 @@
                     },
                     colors: {
                         brand: {
-                            900: '#7f1d1d', /* Red-900 (Burgundy) */
+                            900: '#7f1d1d', /* Red-900 (Burgundy) - Keeping for consistency if needed, or replacing usage */
                             800: '#991b1b',
                             700: '#b91c1c',
+                            600: '#dc2626', /* Brighter red for buttons */
+                        },
+                        navy: {
+                            900: '#002855', /* High contrast Navy */
+                            800: '#003366',
                         },
                         stone: {
                             50: '#fafaf9',
@@ -86,15 +91,7 @@
         class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-stone-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center h-20">
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center mr-4">
-                    <button class="text-stone-600 hover:text-stone-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width-2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+
 
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
@@ -104,6 +101,16 @@
                     </div>
                     <span class="font-bold text-xl tracking-tight text-stone-900">Panama<span
                             class="text-amber-600">School</span></span>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center ml-auto">
+                    <button class="text-stone-600 hover:text-stone-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width-2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
 
                 <!-- Desktop Menu -->
@@ -116,6 +123,26 @@
                         Life</a>
                     <a href="#contact"
                         class="px-5 py-2.5 bg-brand-900 text-white font-medium rounded-lg hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-900/20 transform hover:-translate-y-0.5">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-100">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#"
+                    class="block py-3 text-stone-600 hover:text-brand-900 font-medium transition-colors border-b border-stone-100">Home</a>
+                <a href="#about"
+                    class="block py-3 text-stone-600 hover:text-brand-900 font-medium transition-colors border-b border-stone-100">About</a>
+                <a href="#academics"
+                    class="block py-3 text-stone-600 hover:text-brand-900 font-medium transition-colors border-b border-stone-100">Academics</a>
+                <a href="#campus"
+                    class="block py-3 text-stone-600 hover:text-brand-900 font-medium transition-colors border-b border-stone-100">Campus
+                    Life</a>
+                <div class="pt-4">
+                    <a href="#contact"
+                        class="block w-full text-center px-5 py-3 bg-brand-900 text-white font-medium rounded-lg hover:bg-brand-800 transition-all shadow-lg">
                         Apply Now
                     </a>
                 </div>
@@ -146,7 +173,7 @@
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
             <div class="max-w-3xl animate-fade-in-up">
                 <span
-                    class="inline-block py-1 px-3 rounded-full bg-amber-600/20 border border-amber-600/30 text-amber-700 text-sm font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
+                    class="inline-block py-1 px-3 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-200 text-sm font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
                     Excellence Through Knowledge • Per Spinas Ad Culmina
                 </span>
                 <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
@@ -220,70 +247,70 @@
         </div>
     </div>
 
-    <!-- Schools Overview Section -->
-    <section id="schools" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <!-- Three-Up Schools Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 reveal-on-scroll">
-                <!-- Card 1 -->
-                <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-brand-900">
-                    <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/25"></div>
-                    <div class="relative space-y-6">
-                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Boys
-                        </h3>
-                        <a href="#"
-                            class="inline-flex items-center px-6 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-md">
-                            Learn More
-                        </a>
-                    </div>
+    <!-- Schools Overview Section (Cloned Layout) -->
+    <section id="schools" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top Row: 3 Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 reveal-on-scroll">
+                <!-- Card 1: Navy -->
+                <div
+                    class="bg-navy-900 h-80 p-8 sm:p-10 flex flex-col justify-between items-start relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-3xl font-serif font-bold text-white uppercase leading-tight tracking-wide z-10">
+                        Panama<br>Boys</h3>
+                    <a href="#"
+                        class="bg-brand-600 text-white px-6 py-3 text-xs font-bold tracking-widest uppercase hover:bg-brand-700 transition-colors z-10">Learn
+                        More</a>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-amber-600">
-                    <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/20"></div>
-                    <div class="relative space-y-6">
-                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Prep
-                        </h3>
-                        <a href="#"
-                            class="inline-flex items-center px-6 py-2.5 bg-white text-amber-700 text-sm font-semibold rounded-lg hover:bg-amber-50 transition-colors shadow-md">
-                            Learn More
-                        </a>
-                    </div>
+                <!-- Card 2: Red -->
+                <div
+                    class="bg-brand-600 h-80 p-8 sm:p-10 flex flex-col justify-between items-start relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-3xl font-serif font-bold text-white uppercase leading-tight tracking-wide z-10">
+                        Panama<br>Prep</h3>
+                    <a href="#"
+                        class="bg-white text-brand-600 px-6 py-3 text-xs font-bold tracking-widest uppercase hover:bg-stone-50 transition-colors z-10">Learn
+                        More</a>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="relative overflow-hidden rounded-2xl p-10 text-white shadow-xl bg-brand-900">
-                    <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-black/25"></div>
-                    <div class="relative space-y-6">
-                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase leading-tight">Panama Girls
-                        </h3>
-                        <a href="#"
-                            class="inline-flex items-center px-6 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-md">
-                            Learn More
-                        </a>
-                    </div>
+                <!-- Card 3: Navy -->
+                <div
+                    class="bg-navy-900 h-80 p-8 sm:p-10 flex flex-col justify-between items-start relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-3xl font-serif font-bold text-white uppercase leading-tight tracking-wide z-10">
+                        Panama<br>Girls</h3>
+                    <a href="#"
+                        class="bg-brand-600 text-white px-6 py-3 text-xs font-bold tracking-widest uppercase hover:bg-brand-700 transition-colors z-10">Learn
+                        More</a>
                 </div>
             </div>
 
-            <!-- Who We Are Split -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch reveal-on-scroll">
-                <div class="bg-stone-100 rounded-2xl p-8 sm:p-10 lg:p-12 shadow-sm">
-                    <h3 class="text-brand-900 text-2xl sm:text-3xl font-bold uppercase leading-snug mb-6">Who We Are
-                    </h3>
-                    <p class="text-stone-700 leading-relaxed text-base sm:text-lg mb-8">
-                        Panama School is a family of learning communities that guide students from their foundational
-                        years through college readiness. Set within a calm, nature-forward environment, we balance
-                        rigorous academics with character development and vibrant campus life.
-                    </p>
-                    <a href="#"
-                        class="inline-flex items-center px-6 py-2.5 bg-brand-900 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors shadow">
-                        Our Vision
-                    </a>
+            <!-- Bottom Row: Content + Image -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 reveal-on-scroll">
+                <!-- Left: Content (Gray) -->
+                <div class="bg-stone-200 p-8 sm:p-12 flex flex-col md:flex-row gap-8 items-start">
+                    <!-- Left Col: Title + Button -->
+                    <div class="flex-shrink-0 w-full md:w-32 space-y-6 md:space-y-8">
+                        <h3 class="text-3xl font-serif font-bold text-navy-900 uppercase leading-none tracking-wide">
+                            Who<br>We Are</h3>
+                        <a href="#"
+                            class="inline-block bg-brand-600 text-white px-5 py-2.5 text-xs font-bold tracking-widest uppercase hover:bg-brand-700 transition-colors">Our
+                            Vision</a>
+                    </div>
+                    <!-- Right Col: Text -->
+                    <div class="text-stone-700 text-sm leading-relaxed font-medium">
+                        <p class="mb-4">Panama School is a family of learning communities consisting of Panama Boys,
+                            Panama Girls, Panama Prep and the Nursery school. These schools are set in beautiful country
+                            environments, and will see your child through their entire schooling career.</p>
+                        <p>Located in the tranquil farming community of Marondera, Panama School is widely regarded as
+                            one of the top independent boarding schools and premier educational institutions in the
+                            region.</p>
+                    </div>
                 </div>
-
-                <div class="relative rounded-2xl overflow-hidden shadow-xl min-h-[260px] lg:min-h-[360px]">
-                    <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Campus Building" class="w-full h-full object-cover">
+                <!-- Right: Image -->
+                <div class="relative h-64 lg:h-auto min-h-[300px] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=2069&auto=format&fit=crop"
+                        class="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                        alt="School Building">
                 </div>
             </div>
         </div>
@@ -599,7 +626,8 @@
                 <!-- Copy -->
                 <div class="reveal-on-scroll">
                     <h2 class="text-amber-600 font-bold tracking-wide uppercase text-sm mb-3">Flexible Learning</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Learn from the best, on your
+                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 mb-4">Learn from the best, on
+                        your
                         schedule.</h3>
                     <p class="text-stone-600 text-lg leading-relaxed mb-8">Access curated courses, expert teachers, and
                         structured support designed for both on-campus and online learners. Progress at your pace while
@@ -670,10 +698,10 @@
 
                 <!-- Overlapping Imagery -->
                 <div class="reveal-on-scroll" style="transition-delay: 120ms;">
-                    <div class="relative max-w-xl mx-auto lg:mx-0 p-4">
+                    <div class="relative max-w-xl mx-auto lg:mx-0 p-4 min-h-96 flex flex-col justify-center">
                         <!-- Background/Bottom Image (Even Larger, Color) -->
                         <div
-                            class="absolute right-0 bottom-0 w-11/12 h-96 rounded-2xl overflow-hidden shadow-lg border border-stone-200 bg-stone-100 transform translate-y-4 translate-x-4">
+                            class="absolute right-0 bottom-0 w-full lg:w-11/12 h-96 rounded-2xl overflow-hidden shadow-lg border border-stone-200 bg-stone-100 transform translate-y-4 lg:translate-x-4">
                             <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80"
                                 alt="Collaborative learning"
                                 class="w-full h-full object-cover opacity-90 transition-all duration-700">
@@ -681,7 +709,7 @@
 
                         <!-- Foreground/Top Image (Smaller relative to background) -->
                         <div
-                            class="relative z-10 w-3/5 h-60 rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform -translate-y-8 -translate-x-4 hover:scale-105 transition-transform duration-500">
+                            class="relative z-10 w-3/5 h-60 rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform -translate-x-4 hover:scale-105 transition-transform duration-500">
                             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
                                 alt="Student studying" class="w-full h-full object-cover">
                         </div>
@@ -1890,9 +1918,9 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="py-32 bg-brand-900 relative overflow-hidden reveal-on-scroll parallax-section">
+    <section class="py-32 bg-brand-900 relative overflow-hidden reveal-on-scroll">
         <div
-            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat opacity-40 parallax-bg">
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat opacity-40">
         </div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Begin Your Journey Today</h2>
@@ -2095,11 +2123,15 @@
             handleParallax();
             handleMobileParallax();
 
-            // Mobile Menu Toggle (Basic)
+            // Mobile Menu Toggle
             const btn = document.querySelector('button.text-stone-600');
-            const menu = document.querySelector('.md\\:hidden');
-            // Note: A full mobile menu implementation would require a hidden div toggled here
-            // keeping it simple for this file as per request for "basic"
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
 
             // Testimonial Carousel
             const carousel = document.getElementById('testimonialCarousel');
